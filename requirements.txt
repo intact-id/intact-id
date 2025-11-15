@@ -1,0 +1,17 @@
+# Face Screening Service - Core Requirements
+# Python 3.9+ required
+
+# Web Framework
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+python-multipart==0.0.6
+
+# Face Recognition & Computer Vision
+deepface==0.0.92
+opencv-python==4.9.0.80
+Pillow==10.2.0
+numpy==1.24.3
+
+# Deep Learning Backend (required by DeepFace)
+tensorflow==2.15.0
+# Use tensorflow-cpu==2.15.0 instead if no GPU (saves space & cost)
