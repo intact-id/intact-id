@@ -13,12 +13,22 @@ const NavBar = () => {
                     <Link to="/" style={{ textDecoration: 'none' }}>
                         <li>Home</li>
                     </Link>
-                    <li>Features</li>
-                    <li>Security</li>
+                    <Link to="/features" style={{ textDecoration: 'none' }}>
+                        <li>Features</li>
+                    </Link>
+                    <Link to="/about" style={{ textDecoration: 'none' }}>
+                        <li>About</li>
+                    </Link>
+                    <Link to="/security" style={{ textDecoration: 'none' }}>
+                        <li>Security</li>
+                    </Link>
+                    <Link to="/blog" style={{ textDecoration: 'none' }}>
+                        <li>Resources</li>
+                    </Link>
                     <Link to="/pricing" style={{ textDecoration: 'none' }}>
                         <li>Pricing</li>
                     </Link>
-                    <Link to="/contact" style={{ textDecoration: 'none' }}>
+                    <Link to="/apply" style={{ textDecoration: 'none' }}>
                         <li className="Contact">Get Started</li>
                     </Link>
                 </ul>
