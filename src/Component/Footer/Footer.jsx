@@ -49,7 +49,7 @@ const Footer = () => {
                 </div>
 
                 <div className="footer-bottom">
-                    <p>© 2024 Intact ID Inc. All rights reserved.</p>
+                    <p>© 2025 Intact ID Inc. All rights reserved.</p>
 
                     <div className="system-status">
                         <span className="status-dot"></span>
