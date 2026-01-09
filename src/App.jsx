@@ -13,6 +13,10 @@ import Security from "./Component/Security/Security.jsx";
 import Apply from "./Component/Apply/Apply.jsx";
 import HomeCTA from "./Component/HomeCTA/HomeCTA.jsx";
 import Blog from "./Component/Blog/Blog.jsx";
+import PrivacyPolicy from "./Component/PrivacyPolicy/PrivacyPolicy.jsx";
+import TermsOfService from "./Component/TermsOfService/TermsOfService.jsx";
+import ApiDocs from "./Component/ApiDocs/ApiDocs.jsx";
+import NotFound from "./Component/NotFound/NotFound.jsx";
 
 
 const App = () => {
@@ -37,6 +41,10 @@ const App = () => {
                     <Route path="/security" element={<Security />} />
                     <Route path="/apply" element={<Apply />} />
                     <Route path="/blog" element={<Blog />} />
+                    <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                    <Route path="/terms-of-service" element={<TermsOfService />} />
+                    <Route path="/api" element={<ApiDocs />} />
+                    <Route path="*" element={<NotFound />} />
                 </Routes>
                 <Footer />
             </div>
