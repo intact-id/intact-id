@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  face-service:
+    build: .
+    container_name: face-screening-service
+    restart: always
+    ports:
+      - "8001:8001"
+    env_file:
+      - .env
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
+    depends_on:
+      - redis
+    volumes:
+      - ./logs:/app/logs
+    deploy:
+      resources:
+        limits:
+          cpus: '4'
+          memory: 4G
+        reservations:
+          cpus: '1'
+          memory: 1G
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/health/live"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    shm_size: '2gb'  # Important for DeepFace/TensorFlow
+
+  redis:
+    image: redis:7-alpine
+    container_name: face-service-redis
+    restart: always
+    ports:
+      - "6379:6379"
+    command: redis-server --save 60 1 --loglevel warning
+    volumes:
+      - redis_data:/data
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
+
+volumes:
+  redis_data:
