@@ -58,6 +58,7 @@ def setup_logging() -> None:
     logging.getLogger("fastapi").setLevel(logging.WARNING)
     logging.getLogger("tensorflow").setLevel(logging.ERROR)
     logging.getLogger("deepface").setLevel(logging.WARNING)
+    logging.getLogger("redis").setLevel(logging.WARNING)
 
 
 def get_logger(name: str) -> logging.Logger:

@@ -1,9 +1,13 @@
-"""Redis caching utilities."""
-import hashlib
+"""Caching utilities with optional Redis backend."""
 import json
-from typing import Any, Optional
+import threading
+import time
+from typing import Any, Dict, Optional, Tuple
 
-import redis.asyncio as aioredis
+try:
+    import redis.asyncio as aioredis
+except Exception:  # pragma: no cover - optional dependency
+    aioredis = None
 
 from app.config import get_settings
 from app.core.logging import get_logger
@@ -13,17 +17,26 @@ logger = get_logger(__name__)
 
 
 class CacheManager:
-    """Manage Redis cache connections and operations."""
+    """Manage cache connections and operations."""
 
     def __init__(self):
         """Initialize cache manager."""
-        self.redis: Optional[aioredis.Redis] = None
-        self.enabled = settings.redis_enabled
+        self.redis: Optional["aioredis.Redis"] = None
+        self.enabled = bool(settings.redis_enabled and aioredis is not None)
+        self._memory_cache: Dict[str, Tuple[Optional[float], Any]] = {}
+        self._memory_lock = threading.Lock()
+        self._backend = "redis" if self.enabled else "memory"
 
     async def connect(self) -> None:
         """Connect to Redis with connection pooling."""
         if not self.enabled:
-            logger.info("Redis caching is disabled")
+            if settings.redis_enabled and aioredis is None:
+                logger.warning(
+                    "Redis enabled but redis client not installed. "
+                    "Falling back to in-memory cache."
+                )
+            logger.info("Using in-memory cache backend")
+            self._backend = "memory"
             return
 
         try:
@@ -42,16 +55,39 @@ class CacheManager:
             logger.info(
                 f"Connected to Redis successfully with pool size {settings.redis_max_connections}"
             )
+            self._backend = "redis"
         except Exception as e:
-            logger.warning(f"Failed to connect to Redis: {e}. Caching disabled.")
+            logger.warning(f"Failed to connect to Redis: {e}. Falling back to in-memory cache.")
             self.enabled = False
             self.redis = None
+            self._backend = "memory"
 
     async def disconnect(self) -> None:
         """Disconnect from Redis."""
         if self.redis:
             await self.redis.close()
             logger.info("Disconnected from Redis")
+
+    def _memory_get(self, key: str) -> Optional[Any]:
+        with self._memory_lock:
+            entry = self._memory_cache.get(key)
+            if not entry:
+                return None
+            expires_at, value = entry
+            if expires_at is not None and time.time() > expires_at:
+                self._memory_cache.pop(key, None)
+                return None
+            return value
+
+    def _memory_set(self, key: str, value: Any, ttl: Optional[int]) -> bool:
+        expires_at = (time.time() + ttl) if ttl else None
+        with self._memory_lock:
+            self._memory_cache[key] = (expires_at, value)
+        return True
+
+    def _memory_delete(self, key: str) -> bool:
+        with self._memory_lock:
+            return self._memory_cache.pop(key, None) is not None
 
     async def get(self, key: str) -> Optional[Any]:
         """
@@ -64,7 +100,7 @@ class CacheManager:
             Cached value or None
         """
         if not self.enabled or not self.redis:
-            return None
+            return self._memory_get(key)
 
         try:
             value = await self.redis.get(key)
@@ -90,7 +126,8 @@ class CacheManager:
             True if successful, False otherwise
         """
         if not self.enabled or not self.redis:
-            return False
+            ttl = ttl or settings.cache_ttl_seconds
+            return self._memory_set(key, value, ttl)
 
         try:
             ttl = ttl or settings.cache_ttl_seconds
@@ -113,7 +150,7 @@ class CacheManager:
             True if successful, False otherwise
         """
         if not self.enabled or not self.redis:
-            return False
+            return self._memory_delete(key)
 
         try:
             await self.redis.delete(key)

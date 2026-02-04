@@ -21,25 +21,25 @@ def test_health_check():
     data = response.json()
     assert data["status"] == "healthy"
     assert "models_available" in data
-    print("✅ Health check passed")
+    print("Health check passed")
 
 def test_auth_failure():
     """Test authentication failure."""
     print("Testing auth failure...")
     response = client.post("/api/face/detect")
     assert response.status_code == 401
-    print("✅ Auth failure test passed")
+    print("Auth failure test passed")
 
 def test_auth_success():
     """Test authentication success (using mock data)."""
     print("Testing auth success...")
-    # We can't easily test the full flow without actual images, 
+    # We can't easily test the full flow without actual images,
     # but we can verify the auth middleware passes
-    
+
     # Create a dummy image
     with open("test_image.jpg", "wb") as f:
         f.write(b"fake image data")
-        
+
     try:
         response = client.post(
             "/api/face/detect",

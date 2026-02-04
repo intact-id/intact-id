@@ -29,7 +29,7 @@ class Settings(BaseSettings):
     )
 
     # Redis
-    redis_enabled: bool = Field(default=True, alias="REDIS_ENABLED")
+    redis_enabled: bool = Field(default=False, alias="REDIS_ENABLED")
     redis_host: str = Field(default="localhost", alias="REDIS_HOST")
     redis_port: int = Field(default=6379, alias="REDIS_PORT")
     redis_db: int = Field(default=0, alias="REDIS_DB")
@@ -38,10 +38,10 @@ class Settings(BaseSettings):
 
     # Model Configuration
     default_model: str = Field(default="ArcFace", alias="DEFAULT_MODEL")
-    default_detector: str = Field(default="retinaface", alias="DEFAULT_DETECTOR")
-    preload_models: str = Field(default="ArcFace,Facenet512", alias="PRELOAD_MODELS")
+    default_detector: str = Field(default="opencv", alias="DEFAULT_DETECTOR")
+    preload_models: str = Field(default="ArcFace", alias="PRELOAD_MODELS")
     preload_detectors: str = Field(
-        default="retinaface,opencv", alias="PRELOAD_DETECTORS"
+        default="opencv", alias="PRELOAD_DETECTORS"
     )
 
     # Performance
