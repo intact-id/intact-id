@@ -16,6 +16,7 @@ import Blog from "./Component/Blog/Blog.jsx";
 import PrivacyPolicy from "./Component/PrivacyPolicy/PrivacyPolicy.jsx";
 import TermsOfService from "./Component/TermsOfService/TermsOfService.jsx";
 import ApiDocs from "./Component/ApiDocs/ApiDocs.jsx";
+import ApplicationStatus from "./Component/ApplicationStatus/ApplicationStatus.jsx";
 import NotFound from "./Component/NotFound/NotFound.jsx";
 
 
@@ -44,6 +45,7 @@ const App = () => {
                     <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                     <Route path="/terms-of-service" element={<TermsOfService />} />
                     <Route path="/api" element={<ApiDocs />} />
+                    <Route path="/track" element={<ApplicationStatus />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
                 <Footer />
