@@ -1,0 +1,118 @@
+.privacy-policy-container {
+    padding: 140px 20px 80px;
+    max-width: 900px;
+    margin: 0 auto;
+    color: #d1d5db;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+}
+
+.privacy-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.privacy-header h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+
+.privacy-header p {
+    color: #9ca3af;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.legal-document {
+    background: rgba(17, 24, 39, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 60px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.privacy-content section {
+    margin-bottom: 48px;
+}
+
+.privacy-content section:last-child {
+    margin-bottom: 0;
+}
+
+.privacy-content h2 {
+    color: #f3f4f6;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+}
+
+.privacy-content h3 {
+    color: #e5e7eb;
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-top: 32px;
+    margin-bottom: 16px;
+}
+
+.privacy-content p {
+    margin-bottom: 16px;
+    color: #9ca3af;
+    font-size: 1.05rem;
+    line-height: 1.75;
+}
+
+.privacy-content ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 24px;
+}
+
+.privacy-content ul li {
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 24px;
+    color: #9ca3af;
+    line-height: 1.75;
+}
+
+.privacy-content ul li strong {
+    color: #d1d5db;
+    font-weight: 600;
+}
+
+.privacy-content ul li::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 10px;
+    width: 4px;
+    height: 4px;
+    background-color: #00f2ff;
+    border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+    .privacy-policy-container {
+        padding: 100px 20px 40px;
+    }
+
+    .legal-document {
+        padding: 30px;
+    }
+
+    .privacy-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .privacy-content h2 {
+        font-size: 1.25rem;
+    }
+}

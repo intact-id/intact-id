@@ -1,6 +1,6 @@
 import "./Footer.css";
 import logo from "../../assets/intact-logo.svg";
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -8,7 +8,7 @@ const Footer = () => {
             <div className="footer-container">
                 <div className="footer-grid">
                     <div className="footer-brand">
-                        <img src={logo} alt="Intact ID" className="footer-logo" />
+                        <img src={logo} alt="Intact ID" className="footer-logo"/>
                         <p>The next generation of identity verification. Secure, compliant, and frictionless.</p>
                         <div className="social-links">
                             <a href="#" className="social-link">𝕏</a>
@@ -40,8 +40,8 @@ const Footer = () => {
                     <div className="footer-links">
                         <h4>Legal</h4>
                         <ul>
-                            <li><Link to="/privacy">Privacy Policy</Link></li>
-                            <li><Link to="/terms">Terms of Service</Link></li>
+                            <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+                            <li><Link to="/terms-of-service">Terms of Service</Link></li>
                             <li><Link to="/compliance">Compliance</Link></li>
                             <li><Link to="/status">System Status</Link></li>
                         </ul>
@@ -49,7 +49,7 @@ const Footer = () => {
                 </div>
 
                 <div className="footer-bottom">
-                    <p>© 2024 Intact ID Inc. All rights reserved.</p>
+                    <p>© 2025 Intact ID Inc. All rights reserved.</p>
 
                     <div className="system-status">
                         <span className="status-dot"></span>
