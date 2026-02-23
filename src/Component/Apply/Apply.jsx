@@ -1,9 +1,15 @@
 import { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import { submitApplication } from '../../services/api.js';
 import './Apply.css';
 
 const Apply = () => {
+    const navigate = useNavigate();
     const [currentStep, setCurrentStep] = useState(1);
     const [submitted, setSubmitted] = useState(false);
+    const [submitting, setSubmitting] = useState(false);
+    const [submitError, setSubmitError] = useState('');
+    const [applicationNumber, setApplicationNumber] = useState('');
     const [formData, setFormData] = useState({
         // Company Information
         legalName: '',
@@ -12,7 +18,7 @@ const Apply = () => {
         email: '',
         phone: '',
         website: '',
-        country: 'KE',
+        country: 'KENYA',
         businessType: '',
 
         // Contact Person
@@ -37,17 +43,26 @@ const Apply = () => {
     ];
 
     const countries = [
-        { code: 'KE', name: 'Kenya' },
-        { code: 'NG', name: 'Nigeria' },
-        { code: 'ZA', name: 'South Africa' },
-        { code: 'GH', name: 'Ghana' },
-        { code: 'UG', name: 'Uganda' },
-        { code: 'TZ', name: 'Tanzania' },
-        { code: 'RW', name: 'Rwanda' },
-        { code: 'US', name: 'United States' },
-        { code: 'GB', name: 'United Kingdom' },
-        { code: 'SG', name: 'Singapore' },
-        { code: 'AE', name: 'United Arab Emirates' }
+        { code: 'KENYA',        name: 'Kenya' },
+        { code: 'NIGERIA',      name: 'Nigeria' },
+        { code: 'SOUTH_AFRICA', name: 'South Africa' },
+        { code: 'GHANA',        name: 'Ghana' },
+        { code: 'UGANDA',       name: 'Uganda' },
+        { code: 'TANZANIA',     name: 'Tanzania' },
+        { code: 'RWANDA',       name: 'Rwanda' },
+        { code: 'ETHIOPIA',     name: 'Ethiopia' },
+        { code: 'EGYPT',        name: 'Egypt' },
+        { code: 'MOROCCO',      name: 'Morocco' },
+        { code: 'SENEGAL',      name: 'Senegal' },
+        { code: 'CAMEROON',     name: 'Cameroon' },
+        { code: 'COTE_D_IVOIRE',name: "Côte d'Ivoire" },
+        { code: 'ZAMBIA',       name: 'Zambia' },
+        { code: 'ZIMBABWE',     name: 'Zimbabwe' },
+        { code: 'NAMIBIA',      name: 'Namibia' },
+        { code: 'BOTSWANA',     name: 'Botswana' },
+        { code: 'MOZAMBIQUE',   name: 'Mozambique' },
+        { code: 'ANGOLA',       name: 'Angola' },
+        { code: 'TUNISIA',      name: 'Tunisia' },
     ];
 
     const handleChange = (e) => {
@@ -101,31 +116,45 @@ const Apply = () => {
         setCurrentStep(prev => Math.max(prev - 1, 1));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        if (validateStep(2)) {
-            console.log('Form submitted:', formData);
-            setSubmitted(true);
+        if (!validateStep(2)) return;
 
-            // Reset after 5 seconds
-            setTimeout(() => {
-                setSubmitted(false);
-                setCurrentStep(1);
-                setFormData({
-                    legalName: '',
-                    tradingName: '',
-                    registrationNumber: '',
-                    email: '',
-                    phone: '',
-                    website: '',
-                    country: 'KE',
-                    businessType: '',
-                    contactPersonName: '',
-                    contactPersonTitle: '',
-                    contactPersonEmail: '',
-                    contactPersonPhone: ''
-                });
-            }, 5000);
+        setSubmitting(true);
+        setSubmitError('');
+
+        try {
+            const payload = {
+                legalName: formData.legalName,
+                tradingName: formData.tradingName,
+                registrationNumber: formData.registrationNumber,
+                email: formData.email,
+                phone: formData.phone,
+                website: formData.website,
+                country: formData.country,
+                businessType: formData.businessType,
+                contactPersonName: formData.contactPersonName,
+                contactPersonTitle: formData.contactPersonTitle,
+                contactPersonEmail: formData.contactPersonEmail,
+                contactPersonPhone: formData.contactPersonPhone,
+            };
+
+            const response = await submitApplication(payload);
+            setApplicationNumber(response.data?.applicationNumber || '');
+            setSubmitted(true);
+        } catch (err) {
+            const message = err.response?.data?.responseMessage
+                || err.response?.data?.errorMessage
+                || err.message
+                || 'Submission failed. Please try again.';
+            // Duplicate application
+            if (err.response?.status === 409) {
+                setSubmitError('An application with this email or registration number already exists.');
+            } else {
+                setSubmitError(message);
+            }
+        } finally {
+            setSubmitting(false);
         }
     };
 
@@ -172,6 +201,9 @@ const Apply = () => {
                     <p className="apply-hero-description">
                         Join leading companies using Intact ID for secure, compliant identity verification.
                         Complete the application below to get started.
+                    </p>
+                    <p className="apply-already-applied">
+                        Already applied? <Link to="/track">Track your application →</Link>
                     </p>
                 </div>
 
@@ -490,10 +522,15 @@ const Apply = () => {
                                         </div>
                                     )}
 
+                                    {/* Submission error */}
+                                    {submitError && (
+                                        <div className="submit-error">{submitError}</div>
+                                    )}
+
                                     {/* Form Actions */}
                                     <div className="form-actions">
                                         {currentStep > 1 && (
-                                            <button type="button" onClick={prevStep} className="btn-secondary">
+                                            <button type="button" onClick={prevStep} className="btn-secondary" disabled={submitting}>
                                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                                                     <path d="M15 10H5M5 10L10 15M5 10L10 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                                 </svg>
@@ -509,11 +546,13 @@ const Apply = () => {
                                                 </svg>
                                             </button>
                                         ) : (
-                                            <button type="submit" className="btn-primary">
-                                                Submit Application
-                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                                    <path d="M5 10L8 13L15 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                                                </svg>
+                                            <button type="submit" className="btn-primary" disabled={submitting}>
+                                                {submitting ? 'Submitting...' : 'Submit Application'}
+                                                {!submitting && (
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                        <path d="M5 10L8 13L15 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                                                    </svg>
+                                                )}
                                             </button>
                                         )}
                                     </div>
@@ -536,9 +575,23 @@ const Apply = () => {
                             </div>
                             <h2 className="success-title-apply">Application Submitted!</h2>
                             <p className="success-description-apply">
-                                Thank you for your application. Our team will review your submission and
-                                contact you within 2-3 business days.
+                                Thank you! A confirmation email has been sent to <strong>{formData.email}</strong> with your application number.
                             </p>
+
+                            {applicationNumber && (
+                                <div className="application-number-box">
+                                    <span className="application-number-label">Your Application Number</span>
+                                    <span className="application-number-value">{applicationNumber}</span>
+                                    <span className="application-number-hint">Keep this — you can use it to track your application status.</span>
+                                </div>
+                            )}
+
+                            <div className="success-actions-apply">
+                                <button className="btn-primary" onClick={() => navigate(`/track?ref=${applicationNumber}`)}>
+                                    Track Application Status
+                                </button>
+                            </div>
+
                             <div className="success-next-steps">
                                 <h3>What's Next?</h3>
                                 <ul>
@@ -546,13 +599,13 @@ const Apply = () => {
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                                             <path d="M5 10L8 13L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                         </svg>
-                                        Application review (1-2 business days)
+                                        Application review (1–2 business days)
                                     </li>
                                     <li>
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                                             <path d="M5 10L8 13L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                         </svg>
-                                        Account setup and API credentials
+                                        Account setup and API credentials emailed to you
                                     </li>
                                     <li>
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
