@@ -52,3 +52,18 @@ async def readiness_check():
 async def liveness_check():
     """Liveness probe."""
     return {"status": "alive"}
+
+
+@router.get("/health/config")
+async def config_check():
+    """Expose non-sensitive runtime configuration."""
+    return {
+        "status": "ok",
+        "default_model": settings.default_model,
+        "default_detector": settings.default_detector,
+        "preload_models": settings.preload_models_list,
+        "preload_detectors": settings.preload_detectors_list,
+        "redis_enabled": settings.redis_enabled,
+        "thread_pool_workers": settings.thread_pool_workers,
+        "operation_timeout_seconds": settings.operation_timeout_seconds,
+    }

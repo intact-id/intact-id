@@ -11,11 +11,19 @@ class BaseResponse(BaseModel):
 
 class VerifyResponse(BaseResponse):
     """Response model for face verification."""
-    
+
     match: bool = Field(..., description="Whether faces match")
     confidence: float = Field(..., description="Match confidence (0-100)")
     distance: float = Field(..., description="Raw distance metric")
     threshold: float = Field(..., description="Model threshold")
+    review_status: str = Field(
+        ...,
+        description="Verification outcome: MATCH, NO_MATCH, or MANUAL_REVIEW"
+    )
+    review_reason: Optional[str] = Field(
+        None,
+        description="Reason for the review status, provided when MANUAL_REVIEW"
+    )
     model: str = Field(..., description="Model used")
     detector: str = Field(..., description="Detector used")
     similarity_metric: str = Field(..., description="Similarity metric used")

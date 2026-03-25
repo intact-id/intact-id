@@ -19,7 +19,7 @@ class ImageProcessor:
     """Handles image processing operations."""
 
     @staticmethod
-    async def process_image(
+    def process_image(
         image_bytes: bytes,
         target_size: Tuple[int, int] = settings.DEFAULT_IMAGE_SIZE,
     ) -> np.ndarray:

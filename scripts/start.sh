@@ -16,7 +16,7 @@ exec gunicorn app.main:app \
     --worker-class uvicorn.workers.UvicornWorker \
     --threads $APP_THREADS \
     --bind ${HOST:-0.0.0.0}:${PORT:-8001} \
-    --timeout 120 \
+    --timeout 180 \
     --graceful-timeout 30 \
     --keep-alive 5 \
     --max-requests 1000 \

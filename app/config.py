@@ -38,10 +38,17 @@ class Settings(BaseSettings):
 
     # Model Configuration
     default_model: str = Field(default="ArcFace", alias="DEFAULT_MODEL")
-    default_detector: str = Field(default="opencv", alias="DEFAULT_DETECTOR")
+    default_detector: str = Field(default="retinaface", alias="DEFAULT_DETECTOR")
     preload_models: str = Field(default="ArcFace", alias="PRELOAD_MODELS")
     preload_detectors: str = Field(
-        default="opencv", alias="PRELOAD_DETECTORS"
+        default="retinaface", alias="PRELOAD_DETECTORS"
+    )
+
+    # Verification Review Thresholds
+    # When distance is above model threshold but within this margin, flag for manual review
+    # e.g., if threshold=0.40 and margin=0.10, distances 0.40-0.50 trigger MANUAL_REVIEW
+    manual_review_margin: float = Field(
+        default=0.10, alias="MANUAL_REVIEW_MARGIN"
     )
 
     # Performance

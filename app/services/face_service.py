@@ -81,11 +81,41 @@ class FaceService:
 
             duration_ms = (time.time() - start_time) * 1000
 
+            distance = result["distance"]
+            threshold = result["threshold"]
+            verified = result["verified"]
+
+            # Determine review status
+            # MATCH: distance <= threshold (verified)
+            # MANUAL_REVIEW: distance is above threshold but within the margin
+            # NO_MATCH: distance is clearly above threshold + margin
+            review_margin = settings.manual_review_margin
+            if verified:
+                review_status = "MATCH"
+                review_reason = None
+            elif distance <= threshold + review_margin:
+                review_status = "MANUAL_REVIEW"
+                review_reason = (
+                    f"Face similarity is close to threshold "
+                    f"(distance={round(distance, 4)}, "
+                    f"threshold={threshold}, "
+                    f"margin={review_margin})"
+                )
+            else:
+                review_status = "NO_MATCH"
+                review_reason = None
+
+            # Confidence: how far distance is from threshold, clamped to [0, 100].
+            # A distance of 0 = 100% confident match; at threshold = 50%; above = <50%.
+            confidence = max(0.0, min(100.0, (1 - distance / (threshold * 2)) * 100))
+
             response = {
-                "match": result["verified"],
-                "confidence": round((1 - result["distance"]) * 100, 2),
-                "distance": round(result["distance"], 4),
-                "threshold": result["threshold"],
+                "match": verified,
+                "confidence": round(confidence, 2),
+                "distance": round(distance, 4),
+                "threshold": threshold,
+                "review_status": review_status,
+                "review_reason": review_reason,
                 "model": model_name,
                 "detector": detector_backend,
                 "similarity_metric": result.get("similarity_metric", "cosine"),
