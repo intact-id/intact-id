@@ -173,17 +173,17 @@ const About = () => {
                             <div className="why-number">02</div>
                             <h3 className="why-title">Global Coverage</h3>
                             <p className="why-description">
-                                Support for <span className="highlight">200+ countries</span> and
-                                <span className="highlight"> 10,000+ types</span> of ID documents.
+                                Support for <span className="highlight">2 countries</span> and
+                                <span className="highlight"> 10+ types</span> of ID documents.
                             </p>
                             <div className="why-visual">
                                 <div className="globe-stats">
                                     <div className="stat-pill">
-                                        <span className="stat-value">200+</span>
+                                        <span className="stat-value">2</span>
                                         <span className="stat-label">Countries</span>
                                     </div>
                                     <div className="stat-pill">
-                                        <span className="stat-value">10K+</span>
+                                        <span className="stat-value">10+</span>
                                         <span className="stat-label">ID Types</span>
                                     </div>
                                 </div>

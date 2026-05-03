@@ -1,5 +1,7 @@
 import "./Developer.css";
 import { useState } from "react";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 const Developer = () => {
     const [copied, setCopied] = useState(false);
@@ -8,45 +10,97 @@ const Developer = () => {
     const snippets = {
         node: {
             title: 'verify-user.js',
-            code: `const intact = require('intact-id');
+            code: `const FormData = require('form-data');
+const fs = require('fs');
+const axios = require('axios');
 
-const verification = await intact.verify({
-  document: 'passport',
-  user_id: 'user_123',
-  mode: 'fast'
-});
+const form = new FormData();
+form.append('firstName', 'Jane');
+form.append('lastName', 'Doe');
+form.append('dateOfBirth', '1990-05-15');
+form.append('idNumber', '12345678');
+form.append('idType', 'national_id');
+form.append('nationality', 'KE');
+form.append('phone', '+254700000000');
+form.append('email', 'jane@example.com');
+form.append('verificationType', 'individual');
+form.append('selfie',  fs.createReadStream('./selfie.jpg'));
+form.append('idFront', fs.createReadStream('./id_front.jpg'));
+form.append('idBack',  fs.createReadStream('./id_back.jpg'));
 
-console.log(verification.status); 
-// Output: 'verified'`
+const res = await axios.post(
+  'https://api.intact-id.com/api/v1/kyc/verify/TIER_1',
+  form,
+  { headers: { ...form.getHeaders(),
+      'X-API-Key':    process.env.INTACT_API_KEY,
+      'X-API-Secret': process.env.INTACT_API_SECRET } }
+);
+console.log(res.data.data.verificationId);`
         },
         python: {
             title: 'verify_user.py',
-            code: `import intact_id
+            code: `import requests, os
 
-verification = intact_id.verify(
-    document='passport',
-    user_id='user_123',
-    mode='fast'
+res = requests.post(
+  "https://api.intact-id.com/api/v1/kyc/verify/TIER_1",
+  headers={
+    "X-API-Key":    os.environ["INTACT_API_KEY"],
+    "X-API-Secret": os.environ["INTACT_API_SECRET"],
+  },
+  data={
+    "firstName":        "Jane",
+    "lastName":         "Doe",
+    "dateOfBirth":      "1990-05-15",
+    "idNumber":         "12345678",
+    "idType":           "national_id",
+    "nationality":      "KE",
+    "phone":            "+254700000000",
+    "email":            "jane@example.com",
+    "verificationType": "individual",
+  },
+  files={
+    "selfie":  open("selfie.jpg", "rb"),
+    "idFront": open("id_front.jpg", "rb"),
+    "idBack":  open("id_back.jpg", "rb"),
+  }
 )
-
-print(verification.status)
-# Output: 'verified'`
+print(res.json()["data"]["verificationId"])`
         },
         go: {
             title: 'main.go',
             code: `package main
 
-import "github.com/intact-id/sdk"
+import (
+    "bytes"
+    "fmt"
+    "mime/multipart"
+    "net/http"
+    "os"
+)
 
 func main() {
-    verification, _ := sdk.Verify(sdk.Config{
-        Document: "passport",
-        UserID:   "user_123",
-        Mode:     "fast",
-    })
-    
-    println(verification.Status)
-    // Output: 'verified'
+    var body bytes.Buffer
+    w := multipart.NewWriter(&body)
+    w.WriteField("firstName", "Jane")
+    w.WriteField("lastName", "Doe")
+    w.WriteField("dateOfBirth", "1990-05-15")
+    w.WriteField("idNumber", "12345678")
+    w.WriteField("idType", "national_id")
+    w.WriteField("nationality", "KE")
+    w.WriteField("email", "jane@example.com")
+    w.WriteField("verificationType", "individual")
+    w.Close()
+
+    req, _ := http.NewRequest("POST",
+        "https://api.intact-id.com/api/v1/kyc/verify/TIER_1",
+        &body)
+    req.Header.Set("Content-Type", w.FormDataContentType())
+    req.Header.Set("X-API-Key", os.Getenv("INTACT_API_KEY"))
+    req.Header.Set("X-API-Secret", os.Getenv("INTACT_API_SECRET"))
+
+    client := &http.Client{}
+    res, _ := client.Do(req)
+    fmt.Println(res.Status)
 }`
         }
     };
@@ -82,7 +136,7 @@ func main() {
                         </div>
                     </div>
 
-                    <a href="/docs" className="doc-link">Read the Documentation →</a>
+                    <a href="https://docs.intact-io.com/" className="doc-link" target="_blank" rel="noreferrer">Read the Documentation →</a>
                 </div>
 
                 <div className="code-window">
@@ -120,9 +174,21 @@ func main() {
                     </div>
 
                     <div className="code-content">
-                        <pre>
-                            <code>{snippets[activeLang].code}</code>
-                        </pre>
+                        <SyntaxHighlighter
+                            language={activeLang === 'node' ? 'javascript' : activeLang}
+                            style={vscDarkPlus}
+                            customStyle={{
+                                margin: 0,
+                                padding: '1.25rem',
+                                background: 'transparent',
+                                fontSize: '0.85rem',
+                                lineHeight: '1.6',
+                            }}
+                            showLineNumbers
+                            wrapLongLines
+                        >
+                            {snippets[activeLang].code}
+                        </SyntaxHighlighter>
                     </div>
                 </div>
             </div>

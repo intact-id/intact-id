@@ -22,9 +22,6 @@ const NavBar = () => {
                     <Link to="/security" style={{ textDecoration: 'none' }}>
                         <li>Security</li>
                     </Link>
-                    <Link to="/blog" style={{ textDecoration: 'none' }}>
-                        <li>Resources</li>
-                    </Link>
                     <Link to="/pricing" style={{ textDecoration: 'none' }}>
                         <li>Pricing</li>
                     </Link>

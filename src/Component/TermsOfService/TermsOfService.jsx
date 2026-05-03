@@ -58,12 +58,12 @@ const TermsOfService = () => {
 
                     <section>
                         <h2>8. Governing Law</h2>
-                        <p>These Terms shall be governed and construed in accordance with the laws of California, United States, without regard to its conflict of law provisions. Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect.</p>
+                        <p>These Terms shall be governed and construed in accordance with the laws of Kenya, without regard to its conflict of law provisions. Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect.</p>
                     </section>
 
                     <section>
                         <h2>9. Contact Us</h2>
-                        <p>If you have any questions about these Terms, please contact us at legal@intactid.com.</p>
+                        <p>If you have any questions about these Terms, please contact us at contact@intact-io.com.</p>
                     </section>
                 </div>
             </div>

@@ -116,7 +116,7 @@ const Contact = () => {
                                     </svg>
                                 </div>
                                 <h3 className="info-card-title">Email Us</h3>
-                                <p className="info-card-detail">contact@intactid.com</p>
+                                <p className="info-card-detail">contact@intact-io.com</p>
                                 <p className="info-card-desc">We'll respond within 24 hours</p>
                             </div>
 
@@ -135,7 +135,7 @@ const Contact = () => {
                                     </svg>
                                 </div>
                                 <h3 className="info-card-title">Visit Us</h3>
-                                <p className="info-card-detail">San Francisco, CA</p>
+                                <p className="info-card-detail">Nairobi, Kenya</p>
                                 <p className="info-card-desc">Headquarters & Innovation Lab</p>
                             </div>
 
@@ -171,7 +171,7 @@ const Contact = () => {
                                     </svg>
                                 </div>
                                 <h3 className="info-card-title">Documentation</h3>
-                                <p className="info-card-detail">docs.intactid.com</p>
+                                <p className="info-card-detail">docs.intact-io.com</p>
                                 <p className="info-card-desc">Comprehensive guides & API docs</p>
                             </div>
                         </div>
@@ -180,13 +180,13 @@ const Contact = () => {
                         <div className="quick-links">
                             <h3 className="quick-links-title">Quick Links</h3>
                             <div className="quick-links-grid">
-                                <a href="#" className="quick-link">
+                                <a href="https://docs.intact-io.com/" className="quick-link" target="_blank" rel="noreferrer">
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                                         <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
                                     API Documentation
                                 </a>
-                                <a href="#" className="quick-link">
+                                <a href="/contact" className="quick-link">
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                                         <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
@@ -344,7 +344,7 @@ const Contact = () => {
                     <h3 className="trust-title">Trusted by Industry Leaders</h3>
                     <div className="trust-stats">
                         <div className="trust-stat">
-                            <span className="trust-number">10M+</span>
+                            <span className="trust-number">1000+</span>
                             <span className="trust-label">Verifications</span>
                         </div>
                         <div className="trust-stat">
@@ -352,11 +352,12 @@ const Contact = () => {
                             <span className="trust-label">Uptime</span>
                         </div>
                         <div className="trust-stat">
-                            <span className="trust-number">200+</span>
+                            <span className="trust-number">2</span>
                             <span className="trust-label">Countries</span>
+                            <span className="trust-sublabel">Kenya &amp; Congo</span>
                         </div>
                         <div className="trust-stat">
-                            <span className="trust-number">&lt;2s</span>
+                            <span className="trust-number">&lt;10s</span>
                             <span className="trust-label">Verification Time</span>
                         </div>
                     </div>

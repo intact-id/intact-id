@@ -519,6 +519,12 @@
     color: var(--text-secondary);
 }
 
+.trust-sublabel {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    opacity: 0.75;
+}
+
 /* Animations */
 @keyframes fadeInUp {
     from {
