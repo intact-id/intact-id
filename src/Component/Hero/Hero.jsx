@@ -43,12 +43,12 @@ const Hero = () => {
                         </div>
                         <div className="stat-divider"></div>
                         <div className="stat-item">
-                            <div className="stat-number">&lt;2s</div>
+                            <div className="stat-number">&lt;10s</div>
                             <div className="stat-label">Verification Time</div>
                         </div>
                         <div className="stat-divider"></div>
                         <div className="stat-item">
-                            <div className="stat-number">10M+</div>
+                            <div className="stat-number">1000+</div>
                             <div className="stat-label">Verifications</div>
                         </div>
                     </div>
@@ -71,7 +71,7 @@ const Hero = () => {
                         </div>
                         <div className="card-content">
                             <div className="card-title">Identity Verified</div>
-                            <div className="card-subtitle">John Doe • 2 seconds ago</div>
+                            <div className="card-subtitle">Francis Mwangi • 6 seconds ago</div>
                         </div>
                     </div>
 

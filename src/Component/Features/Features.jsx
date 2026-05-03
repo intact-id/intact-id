@@ -219,13 +219,13 @@ const Features = () => {
                                 <svg className="check-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                     <path d="M4 10L8 14L16 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
-                                <span>Adverse Media Screening</span>
+                                <span>Adverse Media Screening<span className="building-badge">Building</span></span>
                             </div>
                             <div className="feature-item included">
                                 <svg className="check-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                     <path d="M4 10L8 14L16 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
-                                <span>Enhanced Fraud Analysis</span>
+                                <span>Enhanced Fraud Analysis<span className="building-badge">Building</span></span>
                             </div>
                             <div className="feature-item included">
                                 <svg className="check-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -504,13 +504,13 @@ const Features = () => {
                                     <td className="feature-name">Adverse Media Screening</td>
                                     <td className="cross-cell">×</td>
                                     <td className="cross-cell">×</td>
-                                    <td className="check-cell">✓</td>
+                                    <td className="check-cell"><span className="table-building">⚙ Building</span></td>
                                 </tr>
                                 <tr>
                                     <td className="feature-name">Enhanced Fraud Analysis</td>
                                     <td className="cross-cell">×</td>
                                     <td className="cross-cell">×</td>
-                                    <td className="check-cell">✓</td>
+                                    <td className="check-cell"><span className="table-building">⚙ Building</span></td>
                                 </tr>
                                 <tr>
                                     <td className="feature-name">Risk Scoring</td>

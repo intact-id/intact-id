@@ -48,7 +48,7 @@ const HomeCTA = () => {
 
                     <div className="home-cta-stats">
                         <div className="cta-stat">
-                            <span className="cta-stat-value">10M+</span>
+                            <span className="cta-stat-value">1000+</span>
                             <span className="cta-stat-label">Verifications</span>
                         </div>
                         <div className="cta-stat-divider"></div>
@@ -58,13 +58,14 @@ const HomeCTA = () => {
                         </div>
                         <div className="cta-stat-divider"></div>
                         <div className="cta-stat">
-                            <span className="cta-stat-value">&lt;2s</span>
+                            <span className="cta-stat-value">&lt;10s</span>
                             <span className="cta-stat-label">Verification</span>
                         </div>
                         <div className="cta-stat-divider"></div>
                         <div className="cta-stat">
-                            <span className="cta-stat-value">200+</span>
+                            <span className="cta-stat-value">2</span>
                             <span className="cta-stat-label">Countries</span>
+                            <span className="cta-stat-sublabel">Kenya &amp; Congo</span>
                         </div>
                     </div>
                 </div>
