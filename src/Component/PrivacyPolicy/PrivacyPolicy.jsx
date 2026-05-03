@@ -91,8 +91,7 @@ const PrivacyPolicy = () => {
                         <h2>9. Contact Us</h2>
                         <p>If you have any questions about this Privacy Policy, please contact us:</p>
                         <ul>
-                            <li>By email: privacy@intactid.com</li>
-                            <li>By mail: Intact ID Inc., 123 Security Way, Tech City, CA 94000</li>
+                            <li>By email: contact@intact-io.com</li>
                         </ul>
                     </section>
                 </div>
