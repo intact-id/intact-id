@@ -12,7 +12,7 @@ export default function KycPage() {
   }, []);
 
   return (
-    <div className="pg-kyc" style={{ zoom: "0.8", fontFamily: "Figtree, system-ui, sans-serif", color: "#0A0C0E", background: "#FFFFFF", minHeight: "125vh", position: "relative" }}>
+    <div className="pg-kyc" style={{ zoom: "0.8", fontFamily: "Geist, system-ui, sans-serif", color: "#0A0C0E", background: "#FFFFFF", minHeight: "125vh", position: "relative" }}>
       {/* header: utility row + nav row = 112px */}
       <Nav />
       {/* hero */}

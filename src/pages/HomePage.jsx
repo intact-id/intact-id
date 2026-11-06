@@ -51,13 +51,13 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="pg-home" style={{ zoom: "0.8", fontFamily: "Figtree, system-ui, sans-serif", color: "#0A0C0E", background: "#FFFFFF", minHeight: "125vh", position: "relative" }}>
+    <div className="pg-home" style={{ zoom: "0.8", fontFamily: "Geist, system-ui, sans-serif", color: "#0A0C0E", background: "#FFFFFF", minHeight: "125vh", position: "relative" }}>
       {/* header: utility row + nav row = 112px */}
       <Nav />
       {/* hero: centred large text + one CTA */}
       <section className="wrap" style={{ maxWidth: "1920px", margin: "0 auto", padding: "0 56px", boxSizing: "border-box" }}>
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", padding: "136px 0 0" }}>
-          <h1 style={{ margin: "0", maxWidth: "1240px", fontWeight: "500", fontSize: "clamp(44px, 5.6vw, 88px)", lineHeight: "1.08", letterSpacing: "-0.015em", color: "#16181D" }}>
+          <h1 style={{ margin: "0", maxWidth: "1240px", fontWeight: "400", fontSize: "clamp(44px, 5vw, 80px)", lineHeight: "1", letterSpacing: "-1px", color: "#16181D" }}>
             Trust infrastructure for Africa's regulated businesses
           </h1>
           <p style={{ margin: "24px 0 0", maxWidth: "760px", fontSize: "20px", lineHeight: "28px", color: "#16181D" }}>
@@ -410,7 +410,7 @@ export default function HomePage() {
       <section aria-labelledby="ind-title" style={{ position: "relative", overflow: "hidden", minHeight: "780px", backgroundColor: "#E6F1EB", backgroundImage: "radial-gradient(ellipse 45% 70% at 74% 55%, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0) 70%), linear-gradient(115deg, #EEF5F1 0%, #DCEDE4 50%, #C4E4D3 100%)" }}>
         <div aria-hidden="true" style={{ position: "absolute", top: "0", bottom: "0", right: "4%", width: "min(52%, 820px)" }}>
           <div style={{ position: "absolute", left: "50%", top: "50%", width: "330px", height: "660px", margin: "-330px 0 0 -165px", borderRadius: "52px", background: "#0F1513", padding: "12px", boxSizing: "border-box", boxShadow: "0 40px 90px rgba(10,40,28,0.28)" }}>
-            <div style={{ height: "100%", borderRadius: "41px", background: "#FFFFFF", overflow: "hidden", padding: "54px 22px 22px", boxSizing: "border-box", position: "relative", fontFamily: "Figtree, system-ui, sans-serif" }}>
+            <div style={{ height: "100%", borderRadius: "41px", background: "#FFFFFF", overflow: "hidden", padding: "54px 22px 22px", boxSizing: "border-box", position: "relative", fontFamily: "Geist, system-ui, sans-serif" }}>
               <span style={{ position: "absolute", top: "14px", left: "50%", width: "92px", height: "26px", marginLeft: "-46px", borderRadius: "13px", background: "#0F1513" }} />
               <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "6px", fontSize: "15px", fontWeight: "600", color: "#1F2523" }}>
                 <LogoMark size={22} />
