@@ -1,56 +1,26 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import NavBar from "./Component/Navbar/NavBar.jsx";
-import Hero from "./Component/Hero/Hero.jsx";
-import Support from "./Component/support/Support.jsx";
-import Contact from "./Component/Contact/Contact.jsx";
-import Pricing from "./Component/Pricing/Pricing.jsx";
-import Process from "./Component/Process/Process.jsx";
-import Developer from "./Component/Developer/Developer.jsx";
-import Footer from "./Component/Footer/Footer.jsx";
-import About from "./Component/About/About.jsx";
-import Features from "./Component/Features/Features.jsx";
-import Security from "./Component/Security/Security.jsx";
-import Apply from "./Component/Apply/Apply.jsx";
-import HomeCTA from "./Component/HomeCTA/HomeCTA.jsx";
-import Blog from "./Component/Blog/Blog.jsx";
-import PrivacyPolicy from "./Component/PrivacyPolicy/PrivacyPolicy.jsx";
-import TermsOfService from "./Component/TermsOfService/TermsOfService.jsx";
-import ApiDocs from "./Component/ApiDocs/ApiDocs.jsx";
-import ApplicationStatus from "./Component/ApplicationStatus/ApplicationStatus.jsx";
-import NotFound from "./Component/NotFound/NotFound.jsx";
+import { useEffect } from 'react';
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom';
+import HomePage from './pages/HomePage.jsx';
+import KycPage from './pages/KycPage.jsx';
 
-
-const App = () => {
-    return (
-        <BrowserRouter>
-            <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-                <NavBar />
-                <Routes>
-                    <Route path="/" element={
-                        <>
-                            <Hero />
-                            <Support />
-                            <Process />
-                            <Developer />
-                            <HomeCTA />
-                        </>
-                    } />
-                    <Route path="/contact" element={<Contact />} />
-                    <Route path="/pricing" element={<Pricing />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/features" element={<Features />} />
-                    <Route path="/security" element={<Security />} />
-                    <Route path="/apply" element={<Apply />} />
-                    <Route path="/blog" element={<Blog />} />
-                    <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-                    <Route path="/terms-of-service" element={<TermsOfService />} />
-                    <Route path="/api" element={<ApiDocs />} />
-                    <Route path="/track" element={<ApplicationStatus />} />
-                    <Route path="*" element={<NotFound />} />
-                </Routes>
-                <Footer />
-            </div>
-        </BrowserRouter>
-    );
+/** New pages open at the top, unless the link points to a section (#…). */
+function ScrollToTop() {
+  const { pathname, hash } = useLocation();
+  useEffect(() => {
+    if (!hash) window.scrollTo(0, 0);
+  }, [pathname, hash]);
+  return null;
 }
-export default App;
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/kyc" element={<KycPage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}

@@ -1,0 +1,59 @@
+.pg-kyc{margin:0;background:#FFFFFF}
+.pg-kyc a{color:#0B5D45;text-decoration:none}
+.pg-kyc a:hover{color:#08402F}
+.pg-kyc .navitem{color:#0A0C0E;background:none;border:0;font:inherit;cursor:pointer;padding:8px 28px;border-radius:8px}
+.pg-kyc .navitem:hover{background:#F1F5F3;color:#0A0C0E}
+.pg-kyc .menulink{color:#0A0C0E}
+.pg-kyc .menulink:hover{color:#0B5D45}
+.pg-kyc .util{color:#0A0C0E}
+.pg-kyc .util:hover{color:#0B5D45}
+.pg-kyc .btn-primary{background:#0B5D45;color:#FFFFFF}
+.pg-kyc .btn-primary:hover{background:#08402F;color:#FFFFFF}
+.pg-kyc .btn-ghost{background:#FFFFFF;color:#0A0C0E}
+.pg-kyc .btn-ghost:hover{background:#F4F7F5;color:#0A0C0E}
+.pg-kyc .cyc{animation-duration:18s;animation-iteration-count:infinite;animation-fill-mode:backwards;animation-timing-function:ease;animation-delay:var(--d)}
+.pg-kyc .card{opacity:0;animation-name:kyc-card}
+.pg-kyc .on1{animation-name:kyc-on1}
+.pg-kyc .off1{animation-name:kyc-off1}
+.pg-kyc .on2{animation-name:kyc-on2}
+.pg-kyc .off2{animation-name:kyc-off2}
+.pg-kyc .on3{animation-name:kyc-on3}
+.pg-kyc .off3{animation-name:kyc-off3}
+.pg-kyc .vf{animation-name:kyc-vf}
+.pg-kyc .scan{animation-name:kyc-scan}
+.pg-kyc .pin{opacity:0;animation-name:kyc-pinLife;transform-origin:50% 50%}
+.pg-kyc .hl{opacity:0;animation-name:kyc-hlLife}
+.pg-kyc .spin{animation:kyc-spin .9s linear infinite}
+.pg-kyc .pulse{animation:kyc-pulse 1.8s ease-out infinite}
+@keyframes kyc-card{0%{opacity:0;transform:translateY(10px)}2.5%{opacity:1;transform:none}15%{opacity:1;transform:none}16.6%{opacity:0;transform:translateY(-6px)}100%{opacity:0;transform:translateY(-6px)}}
+@keyframes kyc-on1{0%,3.8%{opacity:0;transform:scale(.4)}5%{opacity:1;transform:scale(1)}16.6%{opacity:1;transform:scale(1)}17%,100%{opacity:0}}
+@keyframes kyc-off1{0%,3.8%{opacity:1}4.6%,16.6%{opacity:0}17%,100%{opacity:1}}
+@keyframes kyc-on2{0%,6.1%{opacity:0;transform:scale(.4)}7.3%{opacity:1;transform:scale(1)}16.6%{opacity:1;transform:scale(1)}17%,100%{opacity:0}}
+@keyframes kyc-off2{0%,6.1%{opacity:1}6.9%,16.6%{opacity:0}17%,100%{opacity:1}}
+@keyframes kyc-on3{0%,8.3%{opacity:0;transform:scale(.4)}9.5%{opacity:1;transform:scale(1)}16.6%{opacity:1;transform:scale(1)}17%,100%{opacity:0}}
+@keyframes kyc-off3{0%,8.3%{opacity:1}9.1%,16.6%{opacity:0}17%,100%{opacity:1}}
+@keyframes kyc-vf{0%,9.6%{opacity:0;transform:scale(.6)}11%{opacity:1;transform:scale(1.06)}12%,16.6%{opacity:1;transform:scale(1)}17%,100%{opacity:0}}
+@keyframes kyc-scan{0%{top:0%;opacity:0}1%{opacity:1}4.5%{top:96%}8%{top:0%;opacity:1}9%,100%{top:0%;opacity:0}}
+@keyframes kyc-pinLife{0%{opacity:0;transform:scale(.3)}2%{opacity:1;transform:scale(1.1)}3%,48%{opacity:1;transform:scale(1)}52%,100%{opacity:0;transform:scale(.85)}}
+@keyframes kyc-hlLife{0%{opacity:0}3%,48%{opacity:1}52%,100%{opacity:0}}
+@keyframes kyc-spin{to{transform:rotate(360deg)}}
+@keyframes kyc-pulse{0%{transform:scale(.6);opacity:.7}100%{transform:scale(2.6);opacity:0}}
+@media (prefers-reduced-motion: reduce){
+.pg-kyc .cyc, .pg-kyc .spin, .pg-kyc .pulse{animation:none !important}
+.pg-kyc .card.first{opacity:1}
+.pg-kyc .on1, .pg-kyc .on2, .pg-kyc .on3, .pg-kyc .vf{opacity:1}
+.pg-kyc .off1, .pg-kyc .off2, .pg-kyc .off3, .pg-kyc .scan{opacity:0}
+.pg-kyc .pin, .pg-kyc .hl{opacity:1}
+
+
+}
+@media (max-width: 720px){
+.pg-kyc .stage{aspect-ratio:auto !important;height:660px}
+.pg-kyc .mapbox{left:6% !important;width:88% !important;top:4% !important}
+.pg-kyc .cards{left:4% !important;right:4% !important;width:auto !important;top:auto !important;bottom:16px !important}
+.pg-kyc .promo{display:none !important}
+.pg-kyc .wrap{padding:0 20px !important}
+
+
+}
+
