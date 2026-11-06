@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import Nav from '../components/Nav.jsx';
+import KycSections from '../components/KycSections.jsx';
+import Footer from '../components/Footer.jsx';
 import './kyc.css';
 
 export default function KycPage() {
@@ -688,6 +690,8 @@ export default function KycPage() {
           </div>
         </div>
       </section>
+      <KycSections />
+      <Footer />
       {/* corner promo */}
       <div id="promo" hidden={promoClosed}>
         <aside className="promo" aria-label="Try the sandbox" style={{ position: "fixed", right: "24px", bottom: "24px", zIndex: "25", width: "460px", maxWidth: "calc(100% - 48px)", background: "#FFFFFF", borderRadius: "12px", boxShadow: "0 16px 48px rgba(10,12,14,0.16)", padding: "20px 44px 20px 20px", display: "flex", gap: "20px", alignItems: "center", boxSizing: "border-box" }}>
