@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Nav from '../components/Nav.jsx';
+import { LogoMark } from '../components/Logo.jsx';
+import { SetupPanel, CustomPanel, LivePanel } from '../components/GoLivePanels.jsx';
 import './home.css';
 
 const SOL = {
@@ -15,16 +17,16 @@ const EVERYTHING = [...SOL.ver, ...SOL.scr, ...SOL.tm, ...SOL.cra, ...SOL.fraud]
 const PICK_ALL = [SOL.ver[0], SOL.ver[1], SOL.scr[0], SOL.tm[0], SOL.cra[1], SOL.ver[3], SOL.fraud[0]];
 
 const DEV = {
-  sandbox: { label: 'Sandbox', title: 'Try every check first', text: 'Get test API keys in minutes. The sandbox returns realistic results for every check, so you can build the whole flow before signing anything.', cta: 'Get sandbox keys', file: 'Terminal', status: 'sandbox', code: '$ export INTACT_API_KEY=sk_test_••••\n\n$ curl https://api.intact-id.com/v1/verify \\\n  -H "Authorization: Bearer $INTACT_API_KEY" \\\n  -d type=individual -d country=KE\n\n{ "id": "ver_test_2f81", "status": "verified" }' },
-  integrate: { label: 'Integrate', title: 'One call, or drop in the widget', text: 'Send one request with the document and selfie, or open the hosted widget and let it handle camera capture, document detection and liveness for you.', cta: 'View docs', file: 'POST /v1/verify', status: '200 OK · 1.84s', code: '{\n  "id": "ver_8kd2m1c4",\n  "status": "verified",\n  "checks": {\n    "document":  { "result": "pass" },\n    "biometric": { "result": "pass", "score": 0.987 },\n    "registry":  { "result": "pass", "source": "IPRS" },\n    "sanctions": { "result": "pass" }\n  },\n  "risk": { "band": "low", "score": 12 }\n}' },
-  live: { label: 'Go live', title: 'Switch keys and launch', text: 'Swap your test key for a live one. Signed webhooks tell your system the moment a decision is made, and every result is kept with its evidence.', cta: 'Talk to sales', file: 'Webhook · verification.completed', status: 'signed', code: '{\n  "event": "verification.completed",\n  "id": "ver_8kd2m1c4",\n  "decision": "approved",\n  "evidence": "https://api.intact-id.com/v1/evidence/ver_8kd2m1c4"\n}' },
+  setup: { label: 'Set up', title: 'Start in test mode', text: 'Create your workspace, invite your team and run checks on sample people before any real customer sees them.', cta: 'Create a free account' },
+  custom: { label: 'Customise', title: 'Make the flow yours', text: 'Choose which checks each customer goes through and match the verification screens to your brand. No designers or developers needed.', cta: 'See the verification flow' },
+  live: { label: 'Go live', title: 'Switch on and start onboarding', text: 'Flip to live mode and watch decisions arrive in your dashboard as customers verify, each one saved with its evidence.', cta: 'Talk to sales' },
 };
 
 export default function HomePage() {
   const [tab, setTab] = useState('all');
   const [expanded, setExpanded] = useState(false);
   const [activeIdx, setActiveIdx] = useState('sol');
-  const [devKey, setDevKey] = useState('sandbox');
+  const [devKey, setDevKey] = useState('setup');
 
   const collapsed = tab === 'all' && !expanded;
   const tiles = tab === 'all' ? (collapsed ? PICK_ALL : EVERYTHING) : SOL[tab];
@@ -162,14 +164,24 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        {/* banner: big rounded panel, angled light planes, faint Africa map, large statement */}
+        {/* banner: logo animation — the card appears, its pieces drop in, then the name; light planes drift slowly */}
         <div style={{ position: "relative", marginTop: "44px", height: "900px", borderRadius: "24px", overflow: "hidden", backgroundImage: "linear-gradient(135deg, #0E6B4F 0%, #07432F 48%, #031F16 100%)" }}>
-          <div aria-hidden="true" style={{ position: "absolute", inset: "0", clipPath: "polygon(0 0, 58% 0, 0 72%)", backgroundImage: "linear-gradient(125deg, rgba(150,232,198,0.95) 0%, rgba(61,201,145,0.75) 38%, rgba(29,185,128,0) 80%)" }} />
-          <div aria-hidden="true" style={{ position: "absolute", inset: "0", clipPath: "polygon(46% 0, 100% 0, 100% 46%, 70% 30%)", backgroundImage: "linear-gradient(200deg, rgba(95,211,163,0.55) 0%, rgba(29,185,128,0.18) 55%, rgba(29,185,128,0) 100%)" }} />
-          <div aria-hidden="true" style={{ position: "absolute", inset: "0", clipPath: "polygon(70% 30%, 100% 46%, 100% 100%, 58% 100%)", backgroundImage: "linear-gradient(180deg, rgba(3,31,22,0) 0%, rgba(2,20,14,0.55) 100%)" }} />
-          <div aria-hidden="true" style={{ position: "absolute", inset: "0", backgroundImage: "radial-gradient(ellipse 50% 45% at 72% 38%, rgba(95,211,163,0.22) 0%, rgba(95,211,163,0) 100%)" }} />
-          <img src="/site-assets/africa-dots.svg" alt="" style={{ position: "absolute", right: "8%", top: "70px", width: "420px", opacity: "0.32" }} />
-          <div style={{ position: "absolute", left: "0", right: "0", bottom: "96px", padding: "0 48px", textAlign: "center" }}>
+          <div className="drift-a" aria-hidden="true" style={{ position: "absolute", inset: "-6%", clipPath: "polygon(0 0, 58% 0, 0 72%)", backgroundImage: "linear-gradient(125deg, rgba(150,232,198,0.85) 0%, rgba(61,201,145,0.6) 38%, rgba(29,185,128,0) 80%)" }} />
+          <div className="drift-b" aria-hidden="true" style={{ position: "absolute", inset: "-6%", clipPath: "polygon(46% 0, 100% 0, 100% 46%, 70% 30%)", backgroundImage: "linear-gradient(200deg, rgba(95,211,163,0.5) 0%, rgba(29,185,128,0.15) 55%, rgba(29,185,128,0) 100%)" }} />
+          <div aria-hidden="true" style={{ position: "absolute", inset: "0", backgroundImage: "radial-gradient(ellipse 42% 40% at 50% 36%, rgba(3,31,22,0.65) 0%, rgba(3,31,22,0) 100%), linear-gradient(180deg, rgba(3,31,22,0) 55%, rgba(2,20,14,0.6) 100%)" }} />
+          <div role="img" aria-label="Intact ID logo" style={{ position: "absolute", left: "0", right: "0", top: "230px", display: "flex", alignItems: "center", justifyContent: "center", gap: "36px" }}>
+            <svg aria-hidden="true" width="230" height="230" viewBox="0 0 48 48" style={{ overflow: "visible" }}>
+              <rect className="la la-card" x="3" y="9" width="42" height="30" rx="8" fill="#FFFFFF" />
+              <circle className="la la-dot" cx="17" cy="19.5" r="3.4" fill="#0B5D45" />
+              <rect className="la la-stem" x="13.6" y="25" width="6.8" height="9" rx="3.4" fill="#0B5D45" />
+              <rect className="la la-bar1" x="26" y="20" width="12" height="3.4" rx="1.7" fill="#1DB980" />
+              <rect className="la la-bar2" x="26" y="27" width="8" height="3.4" rx="1.7" fill="#1DB980" />
+            </svg>
+            <span className="la la-name" style={{ color: "#FFFFFF", fontWeight: "600", fontSize: "150px", lineHeight: "1", letterSpacing: "-0.04em" }}>
+              intact id
+            </span>
+          </div>
+          <div style={{ position: "absolute", left: "0", right: "0", bottom: "84px", padding: "0 48px", textAlign: "center" }}>
             <h2 style={{ margin: "0", color: "#FFFFFF", fontWeight: "600", fontSize: "clamp(48px, 7.4vw, 128px)", lineHeight: "1.02", letterSpacing: "-0.02em" }}>
               Intact ID connects
               <br />
@@ -400,11 +412,8 @@ export default function HomePage() {
             <div style={{ height: "100%", borderRadius: "41px", background: "#FFFFFF", overflow: "hidden", padding: "54px 22px 22px", boxSizing: "border-box", position: "relative", fontFamily: "Figtree, system-ui, sans-serif" }}>
               <span style={{ position: "absolute", top: "14px", left: "50%", width: "92px", height: "26px", marginLeft: "-46px", borderRadius: "13px", background: "#0F1513" }} />
               <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "6px", fontSize: "15px", fontWeight: "600", color: "#1F2523" }}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B5D45" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 3 4.5 6v5.5c0 4.6 3.1 8.3 7.5 9.5 4.4-1.2 7.5-4.9 7.5-9.5V6L12 3Z" />
-                  <path d="m8.8 12 2.2 2.2 4.2-4.4" />
-                </svg>
-                Intact ID
+                <LogoMark size={22} />
+                intact id
               </div>
               <div style={{ marginTop: "22px", border: "1px solid #D7DBDA", borderRadius: "20px", padding: "26px 16px 16px", textAlign: "center" }}>
                 <div style={{ width: "64px", height: "64px", margin: "0 auto", borderRadius: "50%", background: "#1DB980", display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -518,7 +527,8 @@ export default function HomePage() {
           <div style={{ position: "absolute", bottom: "12%", right: "6%", display: "flex", alignItems: "center", gap: "14px", padding: "16px 20px", background: "#FFFFFF", borderRadius: "14px", boxShadow: "0 18px 40px rgba(10,40,28,0.14)", whiteSpace: "nowrap" }}>
             <span style={{ width: "44px", height: "44px", borderRadius: "10px", background: "#DCEFE5", display: "flex", alignItems: "center", justifyContent: "center" }}>
               <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B5D45" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 3 4.5 6v5.5c0 4.6 3.1 8.3 7.5 9.5 4.4-1.2 7.5-4.9 7.5-9.5V6L12 3Z" />
+                <path d="M3 12a9 9 0 0 1 18 0Z" />
+                  <path d="M12 12v6a2 2 0 0 0 4 0" />
               </svg>
             </span>
             <span>
@@ -583,7 +593,8 @@ export default function HomePage() {
               </a>
               <a className="ind" href="#">
                 <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 3 4.5 6v5.5c0 4.6 3.1 8.3 7.5 9.5 4.4-1.2 7.5-4.9 7.5-9.5V6L12 3Z" />
+                  <path d="M3 12a9 9 0 0 1 18 0Z" />
+                  <path d="M12 12v6a2 2 0 0 0 4 0" />
                 </svg>
                 Insurance
                 <svg className="ind__arrow" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -700,10 +711,10 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      {/* go live: tabbed panel with code */}
+      {/* go live: tabbed panel with product visuals (no code) */}
       <section aria-labelledby="dev-title" className="wrap" style={{ maxWidth: "1920px", margin: "0 auto", padding: "150px 56px 0", boxSizing: "border-box" }}>
         <h2 id="dev-title" style={{ margin: "0", textAlign: "center", fontWeight: "500", fontSize: "clamp(40px, 4.2vw, 64px)", lineHeight: "1.08", letterSpacing: "-0.02em", color: "#0A0C0E" }}>
-          Go live in days, not months
+          From sign-up to live in days
         </h2>
         <div style={{ marginTop: "56px", display: "flex", flexWrap: "wrap", gap: "40px", padding: "40px", borderRadius: "24px", background: "#F2F6F4", boxSizing: "border-box" }}>
           <div style={{ flex: "1 1 560px", minWidth: "min(100%, 340px)", display: "flex", flexDirection: "column" }}>
@@ -734,13 +745,9 @@ export default function HomePage() {
             </a>
           </div>
           <div style={{ flex: "1 1 760px", minWidth: "0", minHeight: "560px", borderRadius: "16px", backgroundImage: "linear-gradient(135deg, #CFEBDD 0%, #8FD3B3 100%)", display: "flex", alignItems: "center", justifyContent: "center", padding: "48px", boxSizing: "border-box" }}>
-            <div style={{ width: "100%", maxWidth: "640px", borderRadius: "14px", background: "#0F1513", boxShadow: "0 24px 60px rgba(10,40,28,0.25)", overflow: "hidden" }}>
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "14px 18px", borderBottom: "1px solid rgba(255,255,255,0.08)", fontFamily: "'JetBrains Mono', ui-monospace, monospace", fontSize: "13px", color: "#9DB0A7" }}>
-                <span id="devFile">{dev.file}</span>
-                <span style={{ color: "#5FD3A3" }} id="devStatus">{dev.status}</span>
-              </div>
-              <pre style={{ margin: "0", padding: "22px 24px", fontFamily: "'JetBrains Mono', ui-monospace, monospace", fontSize: "15px", lineHeight: "1.75", color: "#D9E6E0", whiteSpace: "pre-wrap", wordBreak: "break-word" }} id="devCode">{dev.code}</pre>
-            </div>
+            {devKey === 'setup' && <SetupPanel />}
+            {devKey === 'custom' && <CustomPanel />}
+            {devKey === 'live' && <LivePanel />}
           </div>
         </div>
       </section>
@@ -982,11 +989,8 @@ export default function HomePage() {
           </div>
           <div style={{ marginTop: "96px", paddingTop: "28px", borderTop: "1px solid rgba(255,255,255,0.12)", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "20px", fontSize: "14px", color: "rgba(232,237,235,0.6)" }}>
             <span style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "20px", fontWeight: "600", color: "#FFFFFF" }}>
-              <svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#5FD3A3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 3 4.5 6v5.5c0 4.6 3.1 8.3 7.5 9.5 4.4-1.2 7.5-4.9 7.5-9.5V6L12 3Z" />
-                <path d="m8.8 12 2.2 2.2 4.2-4.4" />
-              </svg>
-              Intact ID
+              <LogoMark size={34} tone="white" />
+              intact id
             </span>
             <span>
               © 2026 Intact ID · Nairobi, Kenya

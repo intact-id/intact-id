@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Logo from './Logo.jsx';
 
 /** Site header: utility row, main nav, and the Products / Solutions menus. */
 export default function Nav() {
@@ -52,12 +53,8 @@ export default function Nav() {
           </a>
         </div>
         <nav aria-label="Main" style={{ height: "72px", display: "flex", alignItems: "center", position: "relative", fontSize: "16px", fontWeight: "500", lineHeight: "22.4px" }}>
-          <Link to="/" style={{ display: "flex", alignItems: "center", gap: "8px", color: "#0A0C0E", fontWeight: "600", fontSize: "22px", letterSpacing: "-0.01em", flex: "1 1 0" }}>
-            <svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0B5D45" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M12 3 4.5 6v5.5c0 4.6 3.1 8.3 7.5 9.5 4.4-1.2 7.5-4.9 7.5-9.5V6L12 3Z" />
-              <path d="m8.8 12 2.2 2.2 4.2-4.4" />
-            </svg>
-            {" Intact ID"}
+          <Link to="/" aria-label="Intact ID home" style={{ display: "flex", alignItems: "center", flex: "1 1 0" }}>
+            <Logo size={40} />
           </Link>
           <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
             <button className="navitem" type="button" id="productsBtn" aria-controls="menu" aria-expanded={open === 'products'} onClick={() => toggle('products')} style={open === 'products' ? { color: '#0B5D45' } : undefined} {...hoverProps('products')}>
