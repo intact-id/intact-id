@@ -87,15 +87,15 @@ export default function Nav() {
                 <div style={{ height: "260px", borderRadius: "4px", background: "#0B5D45", position: "relative", overflow: "hidden" }}>
                   <img src="/site-assets/africa-dots.svg" alt="" style={{ position: "absolute", right: "-30px", top: "0", width: "280px", opacity: "0.35" }} />
                 </div>
-                <div style={{ textAlign: "center", marginTop: "30px", fontWeight: "500", fontSize: "22px" }}>
+                <div style={{ textAlign: "center", marginTop: "30px", fontWeight: "500", fontSize: "28px", lineHeight: "33.6px" }}>
                   Verify Africa at the source
                 </div>
-                <div style={{ textAlign: "center", marginTop: "8px", fontSize: "13px", color: "#4D5560", lineHeight: "1.45" }}>
+                <div style={{ textAlign: "center", marginTop: "8px", fontSize: "14px", color: "#4D5560", lineHeight: "1.45" }}>
                   AI native compliance workflows for scalable businesses
                 </div>
               </div>
-              <div style={{ padding: "40px 32px", display: "flex", flexDirection: "column", gap: "14px", fontSize: "14px" }}>
-                <div style={{ fontWeight: "500", fontSize: "24px", marginBottom: "10px" }}>
+              <div style={{ padding: "40px 32px", display: "flex", flexDirection: "column", gap: "14.6px", fontSize: "16px", lineHeight: "22.4px" }}>
+                <div style={{ fontWeight: "500", fontSize: "28px", lineHeight: "33.6px", color: "#16181D", marginBottom: "10px" }}>
                   Verification
                 </div>
                 <Link className="menulink" to="/kyc">
@@ -120,8 +120,8 @@ export default function Nav() {
                   Agentic verification
                 </a>
               </div>
-              <div style={{ padding: "40px 32px", display: "flex", flexDirection: "column", gap: "14px", fontSize: "14px" }}>
-                <div style={{ fontWeight: "500", fontSize: "24px", marginBottom: "10px" }}>
+              <div style={{ padding: "40px 32px", display: "flex", flexDirection: "column", gap: "14.6px", fontSize: "16px", lineHeight: "22.4px" }}>
+                <div style={{ fontWeight: "500", fontSize: "28px", lineHeight: "33.6px", color: "#16181D", marginBottom: "10px" }}>
                   Screening
                 </div>
                 <a className="menulink" href="#">
@@ -133,7 +133,7 @@ export default function Nav() {
                 <a className="menulink" href="#">
                   Entity-level screening
                 </a>
-                <div style={{ fontWeight: "500", fontSize: "24px", margin: "20px 0 10px" }}>
+                <div style={{ fontWeight: "500", fontSize: "28px", lineHeight: "33.6px", color: "#16181D", margin: "20px 0 10px" }}>
                   Monitoring
                 </div>
                 <a className="menulink" href="#">
@@ -143,8 +143,8 @@ export default function Nav() {
                   Signed webhooks
                 </a>
               </div>
-              <div style={{ padding: "40px 32px", display: "flex", flexDirection: "column", gap: "14px", fontSize: "14px" }}>
-                <div style={{ fontWeight: "500", fontSize: "24px", marginBottom: "10px" }}>
+              <div style={{ padding: "40px 32px", display: "flex", flexDirection: "column", gap: "14.6px", fontSize: "16px", lineHeight: "22.4px" }}>
+                <div style={{ fontWeight: "500", fontSize: "28px", lineHeight: "33.6px", color: "#16181D", marginBottom: "10px" }}>
                   Transaction monitoring
                 </div>
                 <a className="menulink" href="#">
@@ -167,19 +167,19 @@ export default function Nav() {
                 </a>
               </div>
               <div style={{ padding: "40px 44px", display: "flex", flexDirection: "column", gap: "18px", borderLeft: "1px solid #ECEFEE" }}>
-                <div style={{ fontWeight: "500", fontSize: "24px", marginBottom: "4px" }}>
+                <div style={{ fontWeight: "500", fontSize: "28px", lineHeight: "33.6px", color: "#16181D", marginBottom: "4px" }}>
                   Platform
                 </div>
-                <a className="menulink" href="#" style={{ fontSize: "20px" }}>
+                <a className="menulink" href="#" style={{ fontSize: "24px", lineHeight: "28.8px" }}>
                   Explainable risk scoring
                 </a>
-                <a className="menulink" href="#" style={{ fontSize: "20px" }}>
+                <a className="menulink" href="#" style={{ fontSize: "24px", lineHeight: "28.8px" }}>
                   {"Evidence & audit log"}
                 </a>
-                <a className="menulink" href="#" style={{ fontSize: "20px" }}>
+                <a className="menulink" href="#" style={{ fontSize: "24px", lineHeight: "28.8px" }}>
                   {"API & SDKs"}
                 </a>
-                <a className="menulink" href="#" style={{ fontSize: "20px" }}>
+                <a className="menulink" href="#" style={{ fontSize: "24px", lineHeight: "28.8px" }}>
                   Sandbox
                 </a>
               </div>
@@ -191,15 +191,15 @@ export default function Nav() {
                 <div style={{ height: "260px", borderRadius: "4px", background: "#0B5D45", position: "relative", overflow: "hidden" }}>
                   <img src="/site-assets/africa-dots.svg" alt="" style={{ position: "absolute", right: "-30px", top: "0", width: "280px", opacity: "0.35" }} />
                 </div>
-                <div style={{ textAlign: "center", marginTop: "30px", fontWeight: "500", fontSize: "22px" }}>
+                <div style={{ textAlign: "center", marginTop: "30px", fontWeight: "500", fontSize: "28px", lineHeight: "33.6px" }}>
                   Built for regulated teams
                 </div>
-                <div style={{ textAlign: "center", marginTop: "8px", fontSize: "13px", color: "#4D5560", lineHeight: "1.45" }}>
+                <div style={{ textAlign: "center", marginTop: "8px", fontSize: "14px", color: "#4D5560", lineHeight: "1.45" }}>
                   Compliance, risk and fraud workflows for banks, fintechs and payment companies
                 </div>
               </div>
-              <div style={{ padding: "40px 32px", display: "flex", flexDirection: "column", gap: "14px", fontSize: "14px" }}>
-                <div style={{ fontWeight: "500", fontSize: "24px", marginBottom: "10px" }}>
+              <div style={{ padding: "40px 32px", display: "flex", flexDirection: "column", gap: "14.6px", fontSize: "16px", lineHeight: "22.4px" }}>
+                <div style={{ fontWeight: "500", fontSize: "28px", lineHeight: "33.6px", color: "#16181D", marginBottom: "10px" }}>
                   Compliance
                 </div>
                 <a className="menulink" href="#">
@@ -218,8 +218,8 @@ export default function Nav() {
                   Age verification
                 </a>
               </div>
-              <div style={{ padding: "40px 32px", display: "flex", flexDirection: "column", gap: "14px", fontSize: "14px" }}>
-                <div style={{ fontWeight: "500", fontSize: "24px", marginBottom: "10px" }}>
+              <div style={{ padding: "40px 32px", display: "flex", flexDirection: "column", gap: "14.6px", fontSize: "16px", lineHeight: "22.4px" }}>
+                <div style={{ fontWeight: "500", fontSize: "28px", lineHeight: "33.6px", color: "#16181D", marginBottom: "10px" }}>
                   Customer risk assessment
                 </div>
                 <a className="menulink" href="#">
@@ -238,8 +238,8 @@ export default function Nav() {
                   Auditable score breakdowns
                 </a>
               </div>
-              <div style={{ padding: "40px 32px", display: "flex", flexDirection: "column", gap: "14px", fontSize: "14px" }}>
-                <div style={{ fontWeight: "500", fontSize: "24px", marginBottom: "10px" }}>
+              <div style={{ padding: "40px 32px", display: "flex", flexDirection: "column", gap: "14.6px", fontSize: "16px", lineHeight: "22.4px" }}>
+                <div style={{ fontWeight: "500", fontSize: "28px", lineHeight: "33.6px", color: "#16181D", marginBottom: "10px" }}>
                   Fraud
                 </div>
                 <a className="menulink" href="#">
@@ -262,10 +262,10 @@ export default function Nav() {
                 </a>
               </div>
               <div style={{ padding: "40px 44px", display: "flex", flexDirection: "column", gap: "18px", borderLeft: "1px solid #ECEFEE" }}>
-                <div style={{ fontWeight: "500", fontSize: "24px", marginBottom: "4px" }}>
+                <div style={{ fontWeight: "500", fontSize: "28px", lineHeight: "33.6px", color: "#16181D", marginBottom: "4px" }}>
                   Workforce
                 </div>
-                <a className="menulink" href="#" style={{ fontSize: "20px" }}>
+                <a className="menulink" href="#" style={{ fontSize: "24px", lineHeight: "28.8px" }}>
                   Workforce verification
                 </a>
               </div>
