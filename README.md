@@ -1,8 +1,20 @@
-# React + Vite
+# Intact ID website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Marketing site for Intact ID: the homepage and one landing page per product.
 
-Currently, two official plugins are available:
+| Route | Page |
+| --- | --- |
+| `/` | Homepage (`src/pages/HomePage.jsx`) |
+| `/kyc` | KYC landing page (`src/pages/KycPage.jsx`) |
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The header is shared (`src/components/Nav.jsx`). Images live in `public/site-assets/`.
+Each page's styles are scoped to its root class (`.pg-home`, `.pg-kyc`) so pages can't affect each other.
+
+```bash
+npm install
+npm run dev     # http://localhost:5173
+npm run build   # output in dist/, deployed by Vercel
+```
+
+To add a product page: create `src/pages/<Name>Page.jsx`, add a `<Route>` in `src/App.jsx`,
+and point its menu item in `Nav.jsx` at the new path.
