@@ -116,6 +116,9 @@ export default function Nav() {
                 <a className="menulink" href="#">
                   {"Directors & beneficial owners"}
                 </a>
+                <Link className="menulink" to="/reusable-kyc">
+                  Reusable KYC
+                </Link>
                 <a className="menulink" href="#">
                   Agentic verification
                 </a>

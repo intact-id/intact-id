@@ -1,0 +1,61 @@
+.pg-rk .pp-h2{margin:0;text-align:center;font-weight:500;font-size:clamp(40px,4.2vw,64px);line-height:1.08;letter-spacing:-0.02em}
+.pg-rk .pp-sub{margin:20px auto 0;max-width:820px;text-align:center;font-size:20px;line-height:28px;color:#3F4744}
+.pg-rk .pp-feat{display:flex;flex-wrap:wrap;align-items:center;gap:64px;margin-top:120px}
+.pg-rk .pp-fvis{flex:1 1 680px;min-width:0;min-height:560px;border-radius:24px;background-image:linear-gradient(160deg,#1A7A5C 0%,#0B5D45 100%);display:flex;align-items:center;justify-content:center;padding:48px 32px;box-sizing:border-box;position:relative;overflow:hidden}
+.pg-rk .pp-ftxt{flex:1 1 520px;min-width:min(100%,320px)}
+.pg-rk .pp-fh{margin:0;font-size:clamp(30px,2.6vw,40px);font-weight:500;line-height:1.15;letter-spacing:-0.01em}
+.pg-rk .pp-fp{margin:14px 0 0;font-size:20px;line-height:28px;color:#3F4744}
+.pg-rk .acc{border-bottom:1px solid #E1E6E3}
+.pg-rk .acc__q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;background:none;border:0;font:inherit;font-size:20px;font-weight:500;text-align:left;color:#0A0C0E;cursor:pointer}
+.pg-rk .acc__a{margin:0;padding:0 36px 22px 0;font-size:18px;line-height:27px;color:#3F4744}
+.pg-rk .pp-card{background:#FFFFFF;border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,0.18);padding:24px;box-sizing:border-box}
+.pg-rk .pp-step{display:flex;gap:18px;align-items:flex-start}
+.pg-rk .pp-step__n{width:36px;height:36px;border-radius:10px;background:#0A0C0E;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-weight:600;flex:none}
+.pg-rk .pp-step__h{font-size:24px;font-weight:500}
+.pg-rk .pp-step__p{margin-top:6px;font-size:18px;line-height:26px;color:#3F4744}
+.pg-rk .kb-ico{width:64px;height:64px;border-radius:8px;background:#DCEFE5;display:flex;align-items:center;justify-content:center;color:#0A0C0E}
+.pg-rk .kb-h3{margin:24px 0 0;font-size:32px;font-weight:500;line-height:38.4px;max-width:424px}
+.pg-rk .kb-p{margin:7px 0 0;font-size:20px;line-height:28px;max-width:424px}
+.pg-rk .pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:600;white-space:nowrap}
+.pg-rk .pill--ok{background:#E3F6EC;color:#0A6B47}
+.pg-rk .pill--warn{background:#FDF1E2;color:#8A4B0B}
+.pg-rk .pill--bad{background:#FBE3E3;color:#B23434}
+.pg-rk .pill--info{background:#E1ECF7;color:#1F4E86}
+.pg-rk .pill--grey{background:#F1F5F3;color:#4D5560}
+.pg-rk .cc{padding:1px 5px;border-radius:4px;background:#EEF1F0;color:#3F4744;font-size:10px;font-weight:600;letter-spacing:0.04em}
+@media (max-width: 1100px){.pg-rk .pp-stage{transform:scale(.72)}}
+@media (max-width: 720px){.pg-rk .pp-stage{transform:scale(.48)}}
+.pg-rk .rk-partner{position:absolute;width:200px;display:flex;align-items:center;gap:12px;padding:16px}
+.pg-rk .rk-pico{width:40px;height:40px;border-radius:10px;background:#E3F6EC;display:flex;align-items:center;justify-content:center;flex:none}
+.pg-rk .rk-line{position:absolute;display:block;height:0;border-top:2px dotted #9AA6A0}
+.pg-rk .rk-pulse{position:absolute;left:522px;width:14px;height:14px;border-radius:50%;background:#1DB980;box-shadow:0 0 0 6px rgba(29,185,128,0.2)}
+.pg-rk .rk-ck{display:flex;align-items:center;gap:8px;padding:6px 0;border-top:1px solid #EEF1F0;font-size:13px}
+.pg-rk .rk-row{display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid #EEF1F0;font-size:14px}
+.pg-rk .tm-tog{width:40px;height:22px;border-radius:11px;background:#1DB980;position:relative;flex:none}
+.pg-rk .tm-tog i{position:absolute;top:3px;right:3px;width:16px;height:16px;border-radius:50%;background:#FFFFFF}
+.pg-rk .tm-tog--off{background:#D5DCD8}
+.pg-rk .tm-tog--off i{right:auto;left:3px}
+.pg-rk .rk-chip{display:inline-flex;align-items:center;gap:8px;padding:12px 14px;border-radius:12px;background:#FFFFFF;box-shadow:0 10px 24px rgba(10,40,28,0.1);font-size:15px;font-weight:600}
+.pg-rk .rk-arrow{font-size:22px;color:#0B5D45}
+.pg-rk .case{display:flex;align-items:center;gap:16px;padding:20px 24px;border-radius:14px;background:#12241C;border:1px solid rgba(255,255,255,0.08);font-size:16px}
+.pg-rk .case b{font-weight:500;font-size:19px;min-width:190px}
+.pg-rk .case span{flex:1;color:#B9C6C0}
+@keyframes rk-rka1{0%,10.0%{opacity:1}12.0%,100%{opacity:0}}
+@keyframes rk-rka2{0%,10.0%{opacity:0;transform:translateY(0px);}14.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
+@keyframes rk-rka3{0%,10.0%{opacity:0;transform:translateY(0px);}14.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
+@keyframes rk-rka4{0%,15.0%{opacity:1}17.0%,100%{opacity:0}}
+@keyframes rk-rka5{0%,15.0%{opacity:0;transform:translateY(0px);}19.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
+@keyframes rk-rka6{0%,15.0%{opacity:0;transform:translateY(0px);}19.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
+@keyframes rk-rka7{0%,20.0%{opacity:1}22.0%,100%{opacity:0}}
+@keyframes rk-rka8{0%,20.0%{opacity:0;transform:translateY(0px);}24.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
+@keyframes rk-rka9{0%,20.0%{opacity:0;transform:translateY(0px);}24.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
+@keyframes rk-rka10{0%,1.0%{opacity:0;transform:translateY(8px);}5.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
+@keyframes rk-rka11{0%,6.0%{transform:scaleX(0)}9.0%,88%{transform:scaleX(1);opacity:1}94%,100%{transform:scaleX(1);opacity:0}}
+@keyframes rk-rka12{0%,6.0%{opacity:0;transform:translateY(8px); filter:blur(6px);}10.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
+@keyframes rk-rka13{0%,27.0%{opacity:0;transform:translateY(8px);}31.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
+@keyframes rk-rka14{0%,32.0%{transform:scaleX(0)}36.0%,88%{transform:scaleX(1);opacity:1}94%,100%{transform:scaleX(1);opacity:0}}
+@keyframes rk-rka15{0%,33.0%{opacity:0;transform:translateY(0px);}37.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
+@keyframes rk-rka16{0%,3.0%{opacity:0;transform:translateY(8px);}7.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
+@keyframes rk-rka17{0%,39.0%{opacity:0;transform:translateY(8px);}43.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
+@media (prefers-reduced-motion: reduce){.pg-rk .pp-stage *{animation:none !important}
+.pg-rk .pp-out{opacity:0 !important}}
