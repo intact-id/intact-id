@@ -104,12 +104,12 @@ export default function Nav() {
                 <Link className="menulink" to="/kyb">
                   Business verification (KYB)
                 </Link>
-                <a className="menulink" href="#">
+                <Link className="menulink" to="/id-verification">
                   ID document checks
-                </a>
-                <a className="menulink" href="#">
+                </Link>
+                <Link className="menulink" to="/liveness">
                   {"Biometrics & liveness"}
-                </a>
+                </Link>
                 <Link className="menulink" to="/kyc">
                   National registry lookup
                 </Link>
@@ -127,21 +127,21 @@ export default function Nav() {
                 <div style={{ fontWeight: "500", fontSize: "28px", lineHeight: "33.6px", color: "#16181D", marginBottom: "10px" }}>
                   Screening
                 </div>
-                <a className="menulink" href="#">
+                <Link className="menulink" to="/aml-screening">
                   {"Sanctions & PEP"}
-                </a>
-                <a className="menulink" href="#">
+                </Link>
+                <Link className="menulink" to="/aml-screening">
                   Adverse media
-                </a>
-                <a className="menulink" href="#">
+                </Link>
+                <Link className="menulink" to="/aml-screening">
                   Entity-level screening
-                </a>
+                </Link>
                 <div style={{ fontWeight: "500", fontSize: "28px", lineHeight: "33.6px", color: "#16181D", margin: "20px 0 10px" }}>
                   Monitoring
                 </div>
-                <a className="menulink" href="#">
+                <Link className="menulink" to="/aml-screening">
                   Ongoing monitoring
-                </a>
+                </Link>
                 <a className="menulink" href="#">
                   Signed webhooks
                 </a>
@@ -214,9 +214,9 @@ export default function Nav() {
                 <Link className="menulink" to="/kyb">
                   KYB (business verification)
                 </Link>
-                <a className="menulink" href="#">
+                <Link className="menulink" to="/aml-screening">
                   AML compliance
-                </a>
+                </Link>
                 <a className="menulink" href="#">
                   Age verification
                 </a>
@@ -245,24 +245,24 @@ export default function Nav() {
                 <div style={{ fontWeight: "500", fontSize: "28px", lineHeight: "33.6px", color: "#16181D", marginBottom: "10px" }}>
                   Fraud
                 </div>
-                <a className="menulink" href="#">
+                <Link className="menulink" to="/fraud-prevention">
                   Fraud prevention
-                </a>
-                <a className="menulink" href="#">
+                </Link>
+                <Link className="menulink" to="/fraud-prevention">
                   New account fraud prevention
-                </a>
-                <a className="menulink" href="#">
+                </Link>
+                <Link className="menulink" to="/fraud-prevention">
                   Identity fraud prevention
-                </a>
-                <a className="menulink" href="#">
+                </Link>
+                <Link className="menulink" to="/fraud-prevention">
                   Account takeover prevention
-                </a>
-                <a className="menulink" href="#">
+                </Link>
+                <Link className="menulink" to="/fraud-prevention">
                   Payment fraud prevention
-                </a>
-                <a className="menulink" href="#">
+                </Link>
+                <Link className="menulink" to="/fraud-prevention">
                   Money muling prevention
-                </a>
+                </Link>
               </div>
               <div style={{ padding: "40px 44px", display: "flex", flexDirection: "column", gap: "18px", borderLeft: "1px solid #ECEFEE" }}>
                 <div style={{ fontWeight: "500", fontSize: "28px", lineHeight: "33.6px", color: "#16181D", marginBottom: "4px" }}>

@@ -3,6 +3,10 @@ import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-route
 import HomePage from './pages/HomePage.jsx';
 import KycPage from './pages/KycPage.jsx';
 import KybPage from './pages/KybPage.jsx';
+import LivenessPage from './pages/LivenessPage.jsx';
+import IdVerificationPage from './pages/IdVerificationPage.jsx';
+import FraudPreventionPage from './pages/FraudPreventionPage.jsx';
+import AmlScreeningPage from './pages/AmlScreeningPage.jsx';
 import ReusableKycPage from './pages/ReusableKycPage.jsx';
 import CustomerRiskPage from './pages/CustomerRiskPage.jsx';
 import TransactionMonitoringPage from './pages/TransactionMonitoringPage.jsx';
@@ -24,6 +28,10 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/kyc" element={<KycPage />} />
         <Route path="/kyb" element={<KybPage />} />
+        <Route path="/liveness" element={<LivenessPage />} />
+        <Route path="/id-verification" element={<IdVerificationPage />} />
+        <Route path="/fraud-prevention" element={<FraudPreventionPage />} />
+        <Route path="/aml-screening" element={<AmlScreeningPage />} />
         <Route path="/reusable-kyc" element={<ReusableKycPage />} />
         <Route path="/customer-risk-assessment" element={<CustomerRiskPage />} />
         <Route path="/transaction-monitoring" element={<TransactionMonitoringPage />} />

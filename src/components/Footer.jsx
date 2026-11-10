@@ -23,12 +23,12 @@ export default function Footer() {
                   <Link className="flink" to="/kyb">
                     Business verification (KYB)
                   </Link>
-                  <a className="flink" href="#">
+                  <Link className="flink" to="/id-verification">
                     ID document checks
-                  </a>
-                  <a className="flink" href="#">
+                  </Link>
+                  <Link className="flink" to="/liveness">
                     {"Biometrics & liveness"}
-                  </a>
+                  </Link>
                   <Link className="flink" to="/kyc">
                     National registry lookup
                   </Link>
@@ -44,15 +44,15 @@ export default function Footer() {
                   <div style={{ fontSize: "13px", color: "rgba(232,237,235,0.5)", marginTop: "6px" }}>
                     Screening
                   </div>
-                  <a className="flink" href="#">
+                  <Link className="flink" to="/aml-screening">
                     {"Sanctions & PEP"}
-                  </a>
-                  <a className="flink" href="#">
+                  </Link>
+                  <Link className="flink" to="/aml-screening">
                     Adverse media
-                  </a>
-                  <a className="flink" href="#">
+                  </Link>
+                  <Link className="flink" to="/aml-screening">
                     Entity-level screening
-                  </a>
+                  </Link>
                 </div>
                 <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
                   <div style={{ fontSize: "13px", color: "rgba(232,237,235,0.5)", marginTop: "6px" }}>
@@ -111,9 +111,9 @@ export default function Footer() {
                   <Link className="flink" to="/kyb">
                     KYB compliance
                   </Link>
-                  <a className="flink" href="#">
+                  <Link className="flink" to="/aml-screening">
                     AML compliance
-                  </a>
+                  </Link>
                   <a className="flink" href="#">
                     Age verification
                   </a>
@@ -134,24 +134,24 @@ export default function Footer() {
                   <div style={{ fontSize: "13px", color: "rgba(232,237,235,0.5)", marginTop: "6px" }}>
                     Fraud
                   </div>
-                  <a className="flink" href="#">
+                  <Link className="flink" to="/fraud-prevention">
                     Fraud prevention
-                  </a>
-                  <a className="flink" href="#">
+                  </Link>
+                  <Link className="flink" to="/fraud-prevention">
                     New account fraud
-                  </a>
-                  <a className="flink" href="#">
+                  </Link>
+                  <Link className="flink" to="/fraud-prevention">
                     Identity fraud
-                  </a>
-                  <a className="flink" href="#">
+                  </Link>
+                  <Link className="flink" to="/fraud-prevention">
                     Account takeover
-                  </a>
-                  <a className="flink" href="#">
+                  </Link>
+                  <Link className="flink" to="/fraud-prevention">
                     Payment fraud
-                  </a>
-                  <a className="flink" href="#">
+                  </Link>
+                  <Link className="flink" to="/fraud-prevention">
                     Money muling
-                  </a>
+                  </Link>
                   <div style={{ fontSize: "13px", color: "rgba(232,237,235,0.5)", marginTop: "6px" }}>
                     Workforce
                   </div>
