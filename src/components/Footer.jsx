@@ -55,9 +55,9 @@ export default function Footer() {
                   <div style={{ fontSize: "13px", color: "rgba(232,237,235,0.5)", marginTop: "6px" }}>
                     Transaction monitoring
                   </div>
-                  <a className="flink" href="#">
+                  <Link className="flink" to="/transaction-monitoring">
                     Real-time screening
-                  </a>
+                  </Link>
                   <a className="flink" href="#">
                     {"Rules & typologies"}
                   </a>
