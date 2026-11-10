@@ -20,9 +20,9 @@ export default function Footer() {
                   <Link className="flink" to="/kyc">
                     Identity verification (KYC)
                   </Link>
-                  <a className="flink" href="#">
+                  <Link className="flink" to="/kyb">
                     Business verification (KYB)
-                  </a>
+                  </Link>
                   <a className="flink" href="#">
                     ID document checks
                   </a>
