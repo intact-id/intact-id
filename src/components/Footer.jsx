@@ -73,9 +73,9 @@ export default function Footer() {
                   <div style={{ fontSize: "13px", color: "rgba(232,237,235,0.5)", marginTop: "6px" }}>
                     Platform
                   </div>
-                  <a className="flink" href="#">
+                  <Link className="flink" to="/customer-risk-assessment">
                     Explainable risk scoring
-                  </a>
+                  </Link>
                   <a className="flink" href="#">
                     {"Evidence & audit log"}
                   </a>
@@ -120,9 +120,9 @@ export default function Footer() {
                   <a className="flink" href="#">
                     Configurable risk models
                   </a>
-                  <a className="flink" href="#">
+                  <Link className="flink" to="/customer-risk-assessment">
                     Risk scoring
-                  </a>
+                  </Link>
                   <a className="flink" href="#">
                     Ongoing reassessment
                   </a>

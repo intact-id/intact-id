@@ -170,9 +170,9 @@ export default function Nav() {
                 <div style={{ fontWeight: "500", fontSize: "28px", lineHeight: "33.6px", color: "#16181D", marginBottom: "4px" }}>
                   Platform
                 </div>
-                <a className="menulink" href="#" style={{ fontSize: "24px", lineHeight: "28.8px" }}>
+                <Link className="menulink" to="/customer-risk-assessment" style={{ fontSize: "24px", lineHeight: "28.8px" }}>
                   Explainable risk scoring
-                </a>
+                </Link>
                 <a className="menulink" href="#" style={{ fontSize: "24px", lineHeight: "28.8px" }}>
                   {"Evidence & audit log"}
                 </a>
