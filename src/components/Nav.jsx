@@ -101,9 +101,9 @@ export default function Nav() {
                 <Link className="menulink" to="/kyc">
                   Identity verification (KYC)
                 </Link>
-                <a className="menulink" href="#">
+                <Link className="menulink" to="/kyb">
                   Business verification (KYB)
-                </a>
+                </Link>
                 <a className="menulink" href="#">
                   ID document checks
                 </a>
