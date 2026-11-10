@@ -110,12 +110,12 @@ export default function Nav() {
                 <a className="menulink" href="#">
                   {"Biometrics & liveness"}
                 </a>
-                <a className="menulink" href="#">
+                <Link className="menulink" to="/kyc">
                   National registry lookup
-                </a>
-                <a className="menulink" href="#">
+                </Link>
+                <Link className="menulink" to="/kyb">
                   {"Directors & beneficial owners"}
-                </a>
+                </Link>
                 <Link className="menulink" to="/reusable-kyc">
                   Reusable KYC
                 </Link>
@@ -153,21 +153,21 @@ export default function Nav() {
                 <Link className="menulink" to="/transaction-monitoring">
                   Real-time transaction screening
                 </Link>
-                <a className="menulink" href="#">
+                <Link className="menulink" to="/transaction-monitoring">
                   {"Rules & typologies"}
-                </a>
-                <a className="menulink" href="#">
+                </Link>
+                <Link className="menulink" to="/transaction-monitoring">
                   Behavioural anomaly detection
-                </a>
-                <a className="menulink" href="#">
+                </Link>
+                <Link className="menulink" to="/transaction-monitoring">
                   {"Alerts & case management"}
-                </a>
-                <a className="menulink" href="#">
+                </Link>
+                <Link className="menulink" to="/customer-risk-assessment">
                   Customer risk assessment
-                </a>
-                <a className="menulink" href="#">
+                </Link>
+                <Link className="menulink" to="/transaction-monitoring">
                   Regulatory reporting (STR/SAR)
-                </a>
+                </Link>
               </div>
               <div style={{ padding: "40px 44px", display: "flex", flexDirection: "column", gap: "18px", borderLeft: "1px solid #ECEFEE" }}>
                 <div style={{ fontWeight: "500", fontSize: "28px", lineHeight: "33.6px", color: "#16181D", marginBottom: "4px" }}>
@@ -205,15 +205,15 @@ export default function Nav() {
                 <div style={{ fontWeight: "500", fontSize: "28px", lineHeight: "33.6px", color: "#16181D", marginBottom: "10px" }}>
                   Compliance
                 </div>
-                <a className="menulink" href="#">
+                <Link className="menulink" to="/kyc">
                   KYC compliance
-                </a>
-                <a className="menulink" href="#">
+                </Link>
+                <Link className="menulink" to="/transaction-monitoring">
                   AML transaction monitoring
-                </a>
-                <a className="menulink" href="#">
+                </Link>
+                <Link className="menulink" to="/kyb">
                   KYB (business verification)
-                </a>
+                </Link>
                 <a className="menulink" href="#">
                   AML compliance
                 </a>
@@ -225,21 +225,21 @@ export default function Nav() {
                 <div style={{ fontWeight: "500", fontSize: "28px", lineHeight: "33.6px", color: "#16181D", marginBottom: "10px" }}>
                   Customer risk assessment
                 </div>
-                <a className="menulink" href="#">
+                <Link className="menulink" to="/customer-risk-assessment">
                   Configurable risk models
-                </a>
-                <a className="menulink" href="#">
+                </Link>
+                <Link className="menulink" to="/customer-risk-assessment">
                   {"Individual & business risk scoring"}
-                </a>
-                <a className="menulink" href="#">
+                </Link>
+                <Link className="menulink" to="/customer-risk-assessment">
                   {"Sanctions & PEP risk overrides"}
-                </a>
-                <a className="menulink" href="#">
+                </Link>
+                <Link className="menulink" to="/customer-risk-assessment">
                   {"Onboarding & ongoing reassessment"}
-                </a>
-                <a className="menulink" href="#">
+                </Link>
+                <Link className="menulink" to="/customer-risk-assessment">
                   Auditable score breakdowns
-                </a>
+                </Link>
               </div>
               <div style={{ padding: "40px 32px", display: "flex", flexDirection: "column", gap: "14.6px", fontSize: "16px", lineHeight: "22.4px" }}>
                 <div style={{ fontWeight: "500", fontSize: "28px", lineHeight: "33.6px", color: "#16181D", marginBottom: "10px" }}>
