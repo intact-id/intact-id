@@ -35,6 +35,9 @@ export default function Footer() {
                   <a className="flink" href="#">
                     {"Directors & beneficial owners"}
                   </a>
+                  <Link className="flink" to="/reusable-kyc">
+                    Reusable KYC
+                  </Link>
                   <a className="flink" href="#">
                     Agentic verification
                   </a>

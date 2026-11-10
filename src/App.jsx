@@ -3,6 +3,7 @@ import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-route
 import HomePage from './pages/HomePage.jsx';
 import KycPage from './pages/KycPage.jsx';
 import KybPage from './pages/KybPage.jsx';
+import ReusableKycPage from './pages/ReusableKycPage.jsx';
 import CustomerRiskPage from './pages/CustomerRiskPage.jsx';
 import TransactionMonitoringPage from './pages/TransactionMonitoringPage.jsx';
 
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/kyc" element={<KycPage />} />
         <Route path="/kyb" element={<KybPage />} />
+        <Route path="/reusable-kyc" element={<ReusableKycPage />} />
         <Route path="/customer-risk-assessment" element={<CustomerRiskPage />} />
         <Route path="/transaction-monitoring" element={<TransactionMonitoringPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
