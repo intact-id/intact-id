@@ -29,12 +29,12 @@ export default function Footer() {
                   <a className="flink" href="#">
                     {"Biometrics & liveness"}
                   </a>
-                  <a className="flink" href="#">
+                  <Link className="flink" to="/kyc">
                     National registry lookup
-                  </a>
-                  <a className="flink" href="#">
+                  </Link>
+                  <Link className="flink" to="/kyb">
                     {"Directors & beneficial owners"}
-                  </a>
+                  </Link>
                   <Link className="flink" to="/reusable-kyc">
                     Reusable KYC
                   </Link>
@@ -61,18 +61,18 @@ export default function Footer() {
                   <Link className="flink" to="/transaction-monitoring">
                     Real-time screening
                   </Link>
-                  <a className="flink" href="#">
+                  <Link className="flink" to="/transaction-monitoring">
                     {"Rules & typologies"}
-                  </a>
-                  <a className="flink" href="#">
+                  </Link>
+                  <Link className="flink" to="/transaction-monitoring">
                     Behavioural anomaly detection
-                  </a>
-                  <a className="flink" href="#">
+                  </Link>
+                  <Link className="flink" to="/transaction-monitoring">
                     {"Alerts & case management"}
-                  </a>
-                  <a className="flink" href="#">
+                  </Link>
+                  <Link className="flink" to="/transaction-monitoring">
                     Regulatory reporting (STR/SAR)
-                  </a>
+                  </Link>
                   <div style={{ fontSize: "13px", color: "rgba(232,237,235,0.5)", marginTop: "6px" }}>
                     Platform
                   </div>
@@ -102,15 +102,15 @@ export default function Footer() {
                   <div style={{ fontSize: "13px", color: "rgba(232,237,235,0.5)", marginTop: "6px" }}>
                     Compliance
                   </div>
-                  <a className="flink" href="#">
+                  <Link className="flink" to="/kyc">
                     KYC compliance
-                  </a>
-                  <a className="flink" href="#">
+                  </Link>
+                  <Link className="flink" to="/transaction-monitoring">
                     AML transaction monitoring
-                  </a>
-                  <a className="flink" href="#">
+                  </Link>
+                  <Link className="flink" to="/kyb">
                     KYB compliance
-                  </a>
+                  </Link>
                   <a className="flink" href="#">
                     AML compliance
                   </a>
@@ -120,15 +120,15 @@ export default function Footer() {
                   <div style={{ fontSize: "13px", color: "rgba(232,237,235,0.5)", marginTop: "6px" }}>
                     Customer risk assessment
                   </div>
-                  <a className="flink" href="#">
+                  <Link className="flink" to="/customer-risk-assessment">
                     Configurable risk models
-                  </a>
+                  </Link>
                   <Link className="flink" to="/customer-risk-assessment">
                     Risk scoring
                   </Link>
-                  <a className="flink" href="#">
+                  <Link className="flink" to="/customer-risk-assessment">
                     Ongoing reassessment
-                  </a>
+                  </Link>
                 </div>
                 <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
                   <div style={{ fontSize: "13px", color: "rgba(232,237,235,0.5)", marginTop: "6px" }}>
