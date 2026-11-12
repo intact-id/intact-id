@@ -3,6 +3,11 @@ import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-route
 import HomePage from './pages/HomePage.jsx';
 import KycPage from './pages/KycPage.jsx';
 import KybPage from './pages/KybPage.jsx';
+import ContactPage from './pages/ContactPage.jsx';
+import PartnersPage from './pages/PartnersPage.jsx';
+import SecurityPage from './pages/SecurityPage.jsx';
+import CareersPage from './pages/CareersPage.jsx';
+import AboutPage from './pages/AboutPage.jsx';
 import RegulatoryReportingPage from './pages/RegulatoryReportingPage.jsx';
 import AlertsCasesPage from './pages/AlertsCasesPage.jsx';
 import AnomalyDetectionPage from './pages/AnomalyDetectionPage.jsx';
@@ -36,6 +41,11 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/kyc" element={<KycPage />} />
         <Route path="/kyb" element={<KybPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/partners" element={<PartnersPage />} />
+        <Route path="/security" element={<SecurityPage />} />
+        <Route path="/careers" element={<CareersPage />} />
+        <Route path="/about" element={<AboutPage />} />
         <Route path="/regulatory-reporting" element={<RegulatoryReportingPage />} />
         <Route path="/alerts-and-cases" element={<AlertsCasesPage />} />
         <Route path="/anomaly-detection" element={<AnomalyDetectionPage />} />

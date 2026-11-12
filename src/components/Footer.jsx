@@ -195,24 +195,24 @@ export default function Footer() {
             </h3>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(1, minmax(0, 1fr))", gap: "24px", marginTop: "20px" }}>
               <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-                <a className="flink" href="#">
+                <Link className="flink" to="/about">
                   About us
-                </a>
-                <a className="flink" href="#">
+                </Link>
+                <Link className="flink" to="/careers">
                   Careers
-                </a>
-                <a className="flink" href="#">
+                </Link>
+                <Link className="flink" to="/partners">
                   Partners
-                </a>
-                <a className="flink" href="#">
+                </Link>
+                <Link className="flink" to="/security">
                   Security
-                </a>
+                </Link>
                 <a className="flink" href="#">
                   Privacy notice
                 </a>
-                <a className="flink" href="#">
+                <Link className="flink" to="/contact">
                   Contact
-                </a>
+                </Link>
               </div>
             </div>
           </div>
