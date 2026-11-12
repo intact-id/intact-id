@@ -91,7 +91,7 @@ quote: q
 <h2>Basic</h2>
 <div className="price"><b>$1.10</b><span>per<br />verification</span></div>
 <p>For businesses that need to know a real person, with a real ID, is signing up.</p>
-<a href="#" className="pbtn">Start free trial</a>
+<a href="/apply" className="pbtn">Start free trial</a>
 <div className="inc">Includes</div>
 <ul><li><span className="tk"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg></span><span>ID verification</span></li><li><span className="tk"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg></span><span>Email verification</span></li><li><span className="tk"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg></span><span>Liveness</span></li><li><span className="tk"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg></span><span>Face match</span></li></ul>
 </div>
@@ -100,7 +100,7 @@ quote: q
 <h2>Compliance</h2>
 <div className="price"><b>$1.50</b><span>per<br />verification</span></div>
 <p>For regulated businesses that must screen every customer at sign-up and keep screening them.</p>
-<a href="#" className="pbtn pbtn--dark">Start free trial</a>
+<a href="/apply" className="pbtn pbtn--dark">Start free trial</a>
 <div className="inc">Everything in Basic, plus</div>
 <ul><li><span className="tk"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg></span><span>AML screening: sanctions and PEP</span></li><li><span className="tk"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg></span><span>Ongoing AML screening</span></li></ul>
 </div>

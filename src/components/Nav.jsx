@@ -51,12 +51,13 @@ export default function Nav() {
             </Link>
           </div>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", gap: "8px", flex: "1 1 0" }}>
+            {/* Log in: destination to be provided */}
             <a className="navitem" href="#" style={{ padding: "10px 16px" }}>
-              Sign up
+              Log in
             </a>
-            <a className="btn-primary" href="#" style={{ padding: "11px 20px", borderRadius: "10px" }}>
+            <Link className="btn-primary" to="/apply" style={{ padding: "11px 20px", borderRadius: "10px" }}>
               Get started
-            </a>
+            </Link>
           </div>
           <div id="menu" hidden={open !== 'products'} {...hoverProps('products')}>
             <div style={{ position: "absolute", top: "100%", left: "0", right: "0", background: "#FFFFFF", borderRadius: "16px", boxShadow: "0 30px 80px rgba(10,12,14,0.22)", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 240px), 1fr))", overflow: "hidden", zIndex: "40", fontWeight: "400" }}>

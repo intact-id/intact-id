@@ -3,6 +3,8 @@ import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-route
 import HomePage from './pages/HomePage.jsx';
 import PrivacyPage from './pages/PrivacyPage.jsx';
 import TermsPage from './pages/TermsPage.jsx';
+import ApplyPage from './pages/ApplyPage.jsx';
+import TrackPage from './pages/TrackPage.jsx';
 import CookieBanner from './components/CookieBanner.jsx';
 import KycPage from './pages/KycPage.jsx';
 import KybPage from './pages/KybPage.jsx';
@@ -49,6 +51,8 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/terms" element={<TermsPage />} />
+        <Route path="/apply" element={<ApplyPage />} />
+        <Route path="/track" element={<TrackPage />} />
         <Route path="/kyc" element={<KycPage />} />
         <Route path="/kyb" element={<KybPage />} />
         <Route path="/agentic-screening" element={<AgenticScreeningPage />} />
