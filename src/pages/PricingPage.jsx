@@ -12,10 +12,12 @@ const SERVICES = [
 { key: 'live', name: 'Selfie and liveness', note: 'Confirms a real person is present' },
 { key: 'face', name: 'Face match', note: 'Matches the selfie to the ID photo', needs: ['doc', 'live'] }
 ];
-const SOON = [
-{ key: 'iprs', name: 'IPRS registry match' }, { key: 'aml', name: 'Sanctions and PEP' },
-{ key: 'poa', name: 'Proof of address' }, { key: 'age', name: 'Age check' }, { key: 'cra', name: 'Customer risk assessment' }
+const EXTRA = [
+{ key: 'iprs', name: 'IPRS registry match', note: 'Confirms Kenyan ID details with the national register' },
+{ key: 'aml', name: 'Sanctions and PEP', note: 'Screens against sanctions, PEP and watchlists' },
+{ key: 'cra', name: 'Customer risk assessment', note: 'Scores each customer low, medium or high' }
 ];
+const SOON = [{ key: 'poa', name: 'Proof of address' }, { key: 'age', name: 'Age check' }];
 const VOL = [['500', 500], ['1,000', 1000], ['5,000', 5000], ['10,000+', 10000]];
 const FAQS = [
 ['How does the free trial work?','You get 14 days and 150 checks to build a workflow, test it in the sandbox and run real verifications. After that you pay per verification.'],
@@ -24,7 +26,7 @@ const FAQS = [
 ['Do I pay for checks a workflow does not use?','No. The widget only asks for what your workflow needs and only those checks run, so you only pay for them.'],
 ['Can I change plans later?','Yes. Switch plans or edit your workflow at any time. Verifications already in progress keep the version and price they started with.'],
 ['Do you offer volume discounts?','Yes. For larger monthly volumes or several workflows, talk to us about volume pricing.'],
-['When will the new checks be available?','IPRS registry match, sanctions and PEP screening, proof of address, age check and risk assessment are coming soon. Talk to us if you need them early.']
+['How are registry, screening and risk checks priced?','IPRS registry match, sanctions and PEP screening and customer risk assessment are available now and priced with your volume. Proof of address and age checks are coming soon; talk to us if you need them early.']
 ];
 
 export default function PricingPage() {
@@ -43,33 +45,35 @@ const faqVals = FAQS.map((f, i) => { const o = (S.faq === undefined ? 0 : S.faq)
 const on = Object.assign({ doc: true, xcheck: true, live: true, face: true }, S.svc || {});
 const toggle = (k) => {
   const n = Object.assign({}, on, { [k]: !on[k] });
-  const all = SERVICES.concat(SOON);
+  const all = SERVICES.concat(EXTRA, SOON);
   if (n[k]) { (all.find(s => s.key === k).needs || []).forEach(d => { n[d] = true; }); }
   else { all.forEach(s => { if ((s.needs || []).includes(k)) n[s.key] = false; }); }
   set({ svc: n });
 };
 const added = SERVICES.filter(s => on[s.key]).map(s => s.key);
 const anySoon = SOON.some(s => on[s.key]);
+const anyExtra = EXTRA.some(s => on[s.key]);
 const vol = VOL[S.vol === undefined ? 1 : S.vol][1];
 let q;
-if (!added.length && !anySoon) q = { label: 'Your price', price: '—', unit: 'Pick at least one check', per: 0, cta: 'Start free trial', note: '' };
-else if (anySoon) q = { label: 'Your price', price: 'Custom', unit: 'Includes checks that are coming soon', per: 0, cta: 'Talk to sales', note: 'We will price this workflow with you, including early access to the new checks.' };
+if (!added.length && !anySoon && !anyExtra) q = { label: 'Your price', price: '—', unit: 'Pick at least one check', per: 0, cta: 'Start free trial', note: '' };
+else if (anySoon || anyExtra) q = { label: 'Your price', price: 'Custom', unit: 'per verification, quoted for your volume', per: 0, cta: 'Get a quote', note: anySoon ? 'Includes checks that are coming soon. We will price this workflow with you and give you early access.' : 'Registry, screening and risk checks are priced with your volume. Tell us roughly how many verifications you run and we will quote the full workflow.' };
 else if (on.live || on.face) q = { label: 'Matches Standard KYC', price: '$1.50', unit: 'per verification', per: 1.5, cta: 'Start free trial', note: '' };
 else q = { label: 'Matches ID check', price: '$1.10', unit: 'per verification', per: 1.1, cta: 'Start free trial', note: '' };
 if (on.face) q.note = q.note || 'Face match needs the ID document and a selfie, so both are included.';
-q.month = q.per ? (vol >= 10000 ? 'Talk to us' : '$' + (q.per * vol).toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })) : '—';
+q.month = q.per ? (vol >= 10000 ? 'Talk to us' : '$' + (q.per * vol).toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })) : ((anySoon || anyExtra) ? 'On quote' : '—');
 if (vol >= 10000 && q.per) q.cta = 'Talk to sales about volume';
 const page = {
 svcs: SERVICES.map(s => ({ name: s.name, note: s.note, cls: 'svcb' + (on[s.key] ? ' is-on' : ''), pressed: on[s.key] ? 'true' : 'false', toggle: () => toggle(s.key) })),
+extra: EXTRA.map(s => ({ name: s.name, note: s.note, cls: 'svcb' + (on[s.key] ? ' is-on' : ''), pressed: on[s.key] ? 'true' : 'false', toggle: () => toggle(s.key) })),
 soon: SOON.map(s => ({ name: s.name, cls: 'svcb is-soon' + (on[s.key] ? ' is-on' : ''), pressed: on[s.key] ? 'true' : 'false', toggle: () => toggle(s.key) })),
-flow: SERVICES.concat(SOON).filter(s => on[s.key]).map(s => ({ name: s.name })),
+flow: SERVICES.concat(EXTRA, SOON).filter(s => on[s.key]).map(s => ({ name: s.name })),
 volChips: VOL.map((v, i) => { const sel = (S.vol === undefined ? 1 : S.vol) === i; return { label: v[0], cls: 'chip' + (sel ? ' is-on' : ''), selected: sel ? 'true' : 'false', pick: () => set({ vol: i }) }; }),
 quote: q
 };
 
   void accVals;
   const faqs = faqVals;
-  const { svcs, soon, flow, volChips, quote } = page;
+  const { svcs, extra, soon, flow, volChips, quote } = page;
 
   return (
     <div className="pg-kyc pg-kyb pg-pricing" style={{ zoom: "0.8", fontFamily: "Geist, system-ui, sans-serif", color: "#0A0C0E", background: "#FFFFFF", minHeight: "125vh", position: "relative" }}>
@@ -103,7 +107,7 @@ quote: q
 <p>For larger volumes, business verification, or a workflow built around your own risk rules.</p>
 <a href="#" className="pbtn">Talk to sales</a>
 <div className="inc">Everything in Standard KYC, plus</div>
-<ul><li><span className="tk"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg></span><span>Your own workflow, priced per service</span></li><li><span className="tk"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg></span><span>Business verification (KYB)</span></li><li><span className="soon">Soon</span><span>IPRS registry match (Kenya)</span></li><li><span className="soon">Soon</span><span>Sanctions and PEP screening</span></li><li><span className="soon">Soon</span><span>Proof of address</span></li><li><span className="soon">Soon</span><span>Customer risk assessment</span></li></ul>
+<ul><li><span className="tk"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg></span><span>Your own workflow, priced per service</span></li><li><span className="tk"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg></span><span>Business verification (KYB)</span></li><li><span className="tk"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg></span><span>IPRS registry match (Kenya)</span></li><li><span className="tk"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg></span><span>Sanctions and PEP screening</span></li><li><span className="tk"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg></span><span>Customer risk assessment</span></li><li><span className="soon">Soon</span><span>Proof of address</span></li></ul>
 </div>
 </div>
 <p className="fine">Prices in US dollars. You only pay for verifications run on live workflows; the sandbox is free.</p>
@@ -117,6 +121,10 @@ quote: q
 <div className="q">Checks</div>
 <div className="svc">
 {svcs.map((s, si) => (<Fragment key={si}><button className={s.cls} type="button" aria-pressed={s.pressed} onClick={s.toggle}><span className="svc__box"></span><span className="svc__t"><b>{s.name}</b><span>{s.note}</span></span></button></Fragment>))}
+</div>
+<div className="q" style={{ marginTop: "28px" }}>More checks, priced with you</div>
+<div className="svc">
+{extra.map((s, si) => (<Fragment key={si}><button className={s.cls} type="button" aria-pressed={s.pressed} onClick={s.toggle}><span className="svc__box"></span><span className="svc__t"><b>{s.name}</b><span>{s.note}</span></span></button></Fragment>))}
 </div>
 <div className="q" style={{ marginTop: "28px" }}>Coming soon</div>
 <div className="svc">
