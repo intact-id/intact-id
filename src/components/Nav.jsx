@@ -150,7 +150,7 @@ export default function Nav() {
                 <div style={{ fontWeight: "500", fontSize: "28px", lineHeight: "33.6px", color: "#16181D", marginBottom: "10px" }}>
                   Transaction monitoring
                 </div>
-                <Link className="menulink" to="/transaction-monitoring">
+                <Link className="menulink" to="/real-time-screening">
                   Real-time transaction screening
                 </Link>
                 <Link className="menulink" to="/transaction-monitoring">
