@@ -153,8 +153,8 @@ export default function Footer() {
                   <Link className="flink" to="/money-muling">
                     Money muling
                   </Link>
-                  <Link className="flink" to="/agentic-payments">
-                    Agentic payments
+                  <Link className="flink" to="/agentic-screening">
+                    Agentic screening
                   </Link>
                   <div style={{ fontSize: "13px", color: "rgba(232,237,235,0.5)", marginTop: "6px" }}>
                     Contact

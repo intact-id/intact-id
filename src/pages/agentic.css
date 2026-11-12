@@ -240,24 +240,28 @@
 .pg-agentic .blk2__h b{font-size:16px;font-weight:600}
 .pg-agentic .blk2 p{margin:8px 0 0;font-size:13px;line-height:1.45;color:#3F4744}
 .pg-agentic .blk2__s{margin-top:12px;padding:10px 12px;border-radius:8px;background:#F2F6F4;font-size:12px;font-weight:600}
-.pg-agentic .r2{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 14px}
-.pg-agentic .r2 .rl{border-top:1px solid #EEF1F0;flex-direction:column;align-items:flex-start;gap:6px}
-.pg-agentic .dec2{position:absolute;right:0;top:0;display:inline-flex;align-items:center;height:26px;padding:0 12px;border-radius:999px;font-size:13px;font-weight:700;white-space:nowrap}
-.pg-agentic .dec2--ok{background:#1DB980;color:#0A0C0E}
-.pg-agentic .dec2--warn{background:#F2B544;color:#3A2600}
-.pg-agentic .dec2--bad{background:#D64545;color:#FFFFFF}
+.pg-agentic .aq{padding:10px 12px;border-radius:10px;margin-top:6px;background:#F7FAF8;display:flex;flex-direction:column;gap:2px}
+.pg-agentic .aq b{font-size:13px;font-weight:600}
+.pg-agentic .aq span{font-size:11px;color:#5B6461}
+.pg-agentic .aq--on{background:#E1ECF7;box-shadow:inset 3px 0 0 #1F4E86}
 @keyframes agentic-agp1{0%,1.0%{opacity:0;transform:translateY(8px);}5.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
-@keyframes agentic-agp2{0%,10.0%{opacity:0;transform:translateY(4px);}14.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
-@keyframes agentic-agp3{0%,13.5%{opacity:0;transform:translateY(4px);}17.5%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
-@keyframes agentic-agp4{0%,17.0%{opacity:0;transform:translateY(4px);}21.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
-@keyframes agentic-agp5{0%,6.0%{opacity:0;transform:translateY(8px); filter:blur(6px);}10.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
-@keyframes agentic-agp6{0%,22.5%{opacity:0;transform:translateY(0px);}26.5%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
-@keyframes agentic-agp7{0%,24.5%{opacity:0;transform:translateY(0px);}28.5%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
-@keyframes agentic-agp8{0%,32.0%{opacity:0;transform:translateY(4px);}36.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
-@keyframes agentic-agp9{0%,35.5%{opacity:0;transform:translateY(4px);}39.5%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
-@keyframes agentic-agp10{0%,39.0%{opacity:0;transform:translateY(4px);}43.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
-@keyframes agentic-agp11{0%,28.0%{opacity:0;transform:translateY(8px); filter:blur(6px);}32.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
-@keyframes agentic-agp12{0%,44.5%{opacity:0;transform:translateY(0px);}48.5%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
-@keyframes agentic-agp13{0%,46.5%{opacity:0;transform:translateY(0px);}50.5%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
+@keyframes agentic-agp2{0%,4.0%{opacity:0;transform:translateY(8px); filter:blur(6px);}8.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
+@keyframes agentic-agp3{0%,6.0%{opacity:0;transform:translateY(4px);}10.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
+@keyframes agentic-agp4{0%,12.0%{opacity:1}14.0%,100%{opacity:0}}
+@keyframes agentic-agp5{0%,12.0%{opacity:0;transform:translateY(0px);}16.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
+@keyframes agentic-agp6{0%,12.0%{opacity:0;transform:translateY(4px);}16.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
+@keyframes agentic-agp7{0%,18.0%{opacity:1}20.0%,100%{opacity:0}}
+@keyframes agentic-agp8{0%,18.0%{opacity:0;transform:translateY(0px);}22.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
+@keyframes agentic-agp9{0%,18.0%{opacity:0;transform:translateY(4px);}22.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
+@keyframes agentic-agp10{0%,24.0%{opacity:1}26.0%,100%{opacity:0}}
+@keyframes agentic-agp11{0%,24.0%{opacity:0;transform:translateY(0px);}28.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
+@keyframes agentic-agp12{0%,24.0%{opacity:0;transform:translateY(4px);}28.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
+@keyframes agentic-agp13{0%,30.0%{opacity:1}32.0%,100%{opacity:0}}
+@keyframes agentic-agp14{0%,30.0%{opacity:0;transform:translateY(0px);}34.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
+@keyframes agentic-agp15{0%,30.0%{opacity:0;transform:translateY(4px);}34.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
+@keyframes agentic-agp16{0%,36.0%{opacity:1}38.0%,100%{opacity:0}}
+@keyframes agentic-agp17{0%,36.0%{opacity:0;transform:translateY(0px);}40.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
+@keyframes agentic-agp18{0%,40.0%{opacity:0;transform:translateY(8px); filter:blur(6px);}44.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
+@keyframes agentic-agp19{0%,47.0%{opacity:0;transform:translateY(8px);}51.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
 @media (prefers-reduced-motion: reduce){.pg-agentic .pp-stage *{animation:none !important}
 .pg-agentic .pp-out{opacity:0 !important}}
