@@ -1,0 +1,258 @@
+.pg-payfraud .pp-h2{margin:0;text-align:center;font-weight:500;font-size:clamp(40px,4.2vw,64px);line-height:1.08;letter-spacing:-0.02em}
+.pg-payfraud .pp-sub{margin:20px auto 0;max-width:820px;text-align:center;font-size:20px;line-height:28px;color:#3F4744}
+.pg-payfraud .pp-feat{display:flex;flex-wrap:wrap;align-items:center;gap:64px;margin-top:120px}
+.pg-payfraud .pp-fvis{flex:1 1 680px;min-width:0;min-height:560px;border-radius:24px;background-image:linear-gradient(160deg,#1A7A5C 0%,#0B5D45 100%);display:flex;align-items:center;justify-content:center;padding:48px 32px;box-sizing:border-box;position:relative;overflow:hidden}
+.pg-payfraud .pp-ftxt{flex:1 1 520px;min-width:min(100%,320px)}
+.pg-payfraud .pp-fh{margin:0;font-size:clamp(30px,2.6vw,40px);font-weight:500;line-height:1.15;letter-spacing:-0.01em}
+.pg-payfraud .pp-fp{margin:14px 0 0;font-size:20px;line-height:28px;color:#3F4744}
+.pg-payfraud .acc{border-bottom:1px solid #E1E6E3}
+.pg-payfraud .acc__q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;background:none;border:0;font:inherit;font-size:20px;font-weight:500;text-align:left;color:#0A0C0E;cursor:pointer}
+.pg-payfraud .acc__a{margin:0;padding:0 36px 22px 0;font-size:18px;line-height:27px;color:#3F4744}
+.pg-payfraud .pp-card{background:#FFFFFF;border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,0.18);padding:24px;box-sizing:border-box}
+.pg-payfraud .pp-step{display:flex;gap:18px;align-items:flex-start}
+.pg-payfraud .pp-step__n{width:36px;height:36px;border-radius:10px;background:#0A0C0E;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-weight:600;flex:none}
+.pg-payfraud .pp-step__h{font-size:24px;font-weight:500}
+.pg-payfraud .pp-step__p{margin-top:6px;font-size:18px;line-height:26px;color:#3F4744}
+.pg-payfraud .kb-ico{width:64px;height:64px;border-radius:8px;background:#DCEFE5;display:flex;align-items:center;justify-content:center;color:#0A0C0E}
+.pg-payfraud .kb-h3{margin:24px 0 0;font-size:32px;font-weight:500;line-height:38.4px;max-width:424px}
+.pg-payfraud .kb-p{margin:7px 0 0;font-size:20px;line-height:28px;max-width:424px}
+.pg-payfraud .pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:600;white-space:nowrap}
+.pg-payfraud .pill--ok{background:#E3F6EC;color:#0A6B47}
+.pg-payfraud .pill--warn{background:#FDF1E2;color:#8A4B0B}
+.pg-payfraud .pill--bad{background:#FBE3E3;color:#B23434}
+.pg-payfraud .pill--info{background:#E1ECF7;color:#1F4E86}
+.pg-payfraud .pill--grey{background:#F1F5F3;color:#4D5560}
+.pg-payfraud .cc{padding:1px 5px;border-radius:4px;background:#EEF1F0;color:#3F4744;font-size:10px;font-weight:600;letter-spacing:0.04em}
+@media (max-width: 1100px){.pg-payfraud .pp-stage{transform:scale(.72)}}
+@media (max-width: 720px){.pg-payfraud .pp-stage{transform:scale(.48)}}
+.pg-payfraud .tm-q{font-size:18px;font-weight:500}
+.pg-payfraud .tm-chips{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
+.pg-payfraud .chip{height:46px;padding:0 20px;border-radius:999px;border:1px solid #D5DCD8;background:#FFFFFF;color:#0A0C0E;font:inherit;font-size:16px;font-weight:500;cursor:pointer}
+.pg-payfraud .chip:hover{border-color:#9AA39F}
+.pg-payfraud .chip.is-on{background:#0A0C0E;border-color:#0A0C0E;color:#FFFFFF}
+.pg-payfraud .case{display:flex;align-items:center;gap:16px;padding:20px 24px;border-radius:14px;background:#12241C;border:1px solid rgba(255,255,255,0.08);font-size:16px}
+.pg-payfraud .case b{font-weight:500;font-size:19px;min-width:200px}
+.pg-payfraud .case span{flex:1;color:#B9C6C0}
+.pg-payfraud .case i{font-style:normal;font-size:13px;font-weight:600;color:#5FD3A3}
+.pg-payfraud .row{display:flex;align-items:center;gap:12px;padding:11px 0;border-top:1px solid #EEF1F0;font-size:14px}
+.pg-payfraud .tog{width:40px;height:22px;border-radius:11px;background:#1DB980;position:relative;flex:none}
+.pg-payfraud .tog i{position:absolute;top:3px;right:3px;width:16px;height:16px;border-radius:50%;background:#FFFFFF}
+.pg-payfraud .tog--off{background:#D5DCD8}
+.pg-payfraud .tog--off i{right:auto;left:3px}
+.pg-payfraud .bar{margin-top:6px;height:6px;border-radius:3px;background:#EEF1F0;overflow:hidden}
+.pg-payfraud .bar b{display:block;height:100%;border-radius:3px}
+.pg-payfraud .eyepill{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 14px;border-radius:24px;background:#DCEFE5;color:#16181D;font-size:15px}
+.pg-payfraud .h1{margin:14px 0 0;font-weight:500;font-size:clamp(38px,4vw,58px);line-height:1.06;letter-spacing:-0.02em;color:#0A0C0E}
+.pg-payfraud .lead{margin:18px 0 0;max-width:600px;font-size:20px;line-height:29px;color:#3F4744}
+.pg-payfraud .ctas{display:flex;gap:8px;margin-top:32px;flex-wrap:wrap;font-size:18px;font-weight:500}
+.pg-payfraud .ctas a{display:inline-flex;align-items:center;gap:8px;padding:15px 30px;border-radius:8px}
+.pg-payfraud .ctas .btn-ghost{border:1.25px solid #DEE2E6}
+.pg-payfraud .rails{margin-top:56px;display:flex;align-items:center;gap:20px 40px;flex-wrap:wrap;font-size:24px;font-weight:600;color:#8E959C;letter-spacing:-0.01em}
+.pg-payfraud .rails__label{font-size:15px;font-weight:500;color:#5B6461;letter-spacing:0;padding-right:8px;border-right:1px solid #DEE2E6}
+.pg-payfraud .h2{margin:0 auto;max-width:960px;text-align:center;font-weight:500;font-size:clamp(36px,3.6vw,56px);line-height:1.08;letter-spacing:-0.02em}
+.pg-payfraud .sub2{margin:16px auto 0;max-width:700px;text-align:center;font-size:19px;line-height:28px;color:#3F4744}
+.pg-payfraud .vgrid{margin:56px auto 0;max-width:1320px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:40px 32px}
+.pg-payfraud .vc__h{display:flex;align-items:flex-start;gap:14px}
+.pg-payfraud .vc__i{width:44px;height:44px;border-radius:10px;background:#DCEFE5;color:#0B5D45;display:flex;align-items:center;justify-content:center;flex:none}
+.pg-payfraud .vc h3{margin:0;font-size:24px;font-weight:500;line-height:1.2}
+.pg-payfraud .vc p{margin:12px 0 0 58px;font-size:18px;line-height:27px;color:#3F4744}
+.pg-payfraud .band{display:flex;flex-wrap:wrap;gap:24px 64px;align-items:flex-end;justify-content:space-between}
+.pg-payfraud .band h2{margin:0;max-width:640px;font-weight:500;font-size:clamp(32px,3.2vw,48px);line-height:1.1;letter-spacing:-0.02em}
+.pg-payfraud .band p{margin:0;max-width:520px;font-size:19px;line-height:28px;color:#B9C6C0}
+.pg-payfraud .chan{margin-top:48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));border-top:1px solid rgba(255,255,255,0.14)}
+.pg-payfraud .chan > div{display:grid;grid-template-columns:auto 1fr;column-gap:14px;row-gap:4px;padding:28px 24px 0 0}
+.pg-payfraud .chan__i{grid-row:span 2;width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;color:#5FD3A3}
+.pg-payfraud .chan b{font-size:20px;font-weight:500}
+.pg-payfraud .chan > div > span:last-child{font-size:15px;color:#B9C6C0}
+.pg-payfraud .feat{display:flex;flex-wrap:wrap;align-items:center;gap:56px;margin-top:80px}
+.pg-payfraud .ftxt{flex:1 1 460px;min-width:min(100%,320px)}
+.pg-payfraud .ftxt h3{margin:0;font-size:clamp(28px,2.4vw,38px);font-weight:500;line-height:1.15;letter-spacing:-0.01em}
+.pg-payfraud .fp{margin:12px 0 0;font-size:19px;line-height:28px;color:#3F4744}
+.pg-payfraud .accs{margin-top:20px}
+.pg-payfraud .fvis{flex:1 1 720px;min-width:0;min-height:520px;border-radius:24px;background:#0B5D45;background-image:radial-gradient(120% 90% at 0% 0%,#1F8A66 0%,#0B5D45 55%,#08402F 100%);display:flex;align-items:center;justify-content:center;padding:40px 24px;box-sizing:border-box}
+.pg-payfraud .ui{background:#FFFFFF;border-radius:14px;box-shadow:0 30px 70px rgba(0,0,0,0.28);padding:22px;box-sizing:border-box;font-size:14px;max-width:640px}
+.pg-payfraud .ui__h{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.pg-payfraud .ui__h b{font-size:17px;font-weight:600}
+.pg-payfraud .seg{display:flex;gap:2px;padding:3px;border-radius:8px;background:#F1F5F3;font-size:12px}
+.pg-payfraud .seg span{padding:4px 10px;border-radius:6px;color:#5B6461}
+.pg-payfraud .seg .seg__on{background:#FFFFFF;color:#0A0C0E;font-weight:600}
+.pg-payfraud .rl{display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid #EEF1F0}
+.pg-payfraud .rl__dot{width:8px;height:8px;border-radius:50%;flex:none}
+.pg-payfraud .rl__dot--bad{background:#D64545}
+.pg-payfraud .rl__dot--warn{background:#E0A030}
+.pg-payfraud .rl__dot--grey{background:#C3CBC7}
+.pg-payfraud .rl__t{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.pg-payfraud .rl__t b{font-weight:500}
+.pg-payfraud .rl__t span{font-size:12px;color:#5B6461}
+.pg-payfraud .rl__hits{font-size:12px;color:#5B6461;white-space:nowrap}
+.pg-payfraud .rl__foot{margin-top:6px;padding-top:12px;border-top:1px solid #EEF1F0;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:12px;color:#5B6461}
+.pg-payfraud .btn-s{display:inline-flex;align-items:center;padding:7px 12px;border-radius:7px;border:1px solid #E1E6E3;font-size:12px;font-weight:600;color:#0A0C0E;white-space:nowrap}
+.pg-payfraud .btn-s--dark{background:#0A0C0E;border-color:#0A0C0E;color:#FFFFFF}
+.pg-payfraud .sub{font-size:12px;color:#5B6461;margin-bottom:6px}
+.pg-payfraud .ck{display:flex;align-items:center;gap:10px;padding:8px 0;font-size:13px}
+.pg-payfraud .ck span{width:16px;height:16px;border-radius:4px;border:1.5px solid #C3CBC7;box-sizing:border-box;flex:none}
+.pg-payfraud .ck--done{color:#5B6461}
+.pg-payfraud .ck--done span{background:#0B5D45;border-color:#0B5D45}
+.pg-payfraud .note{padding:10px 12px;border-radius:8px;background:#F2F6F4;font-size:12px;line-height:1.45;color:#3F4744;margin-bottom:8px}
+.pg-payfraud .note b{display:block;color:#0A0C0E;font-weight:600}
+.pg-payfraud .str{margin-top:14px;padding:12px 14px;border-radius:10px;border:1px solid #BFE6D3;background:#F3FBF7;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px;flex-wrap:wrap}
+.pg-payfraud .calc{margin-top:48px;display:flex;flex-wrap:wrap;gap:16px}
+.pg-payfraud .calc__in{flex:1 1 620px;min-width:min(100%,340px);padding:36px;border-radius:24px;background:#F2F6F4;box-sizing:border-box;display:grid;gap:28px}
+.pg-payfraud .q{font-size:18px;font-weight:500}
+.pg-payfraud .calc__out{flex:1 1 400px;min-width:min(100%,320px);padding:36px;border-radius:24px;background:#0B5D45;color:#FFFFFF;box-sizing:border-box;display:flex;flex-direction:column;gap:10px}
+.pg-payfraud .big{font-size:88px;font-weight:500;line-height:1;letter-spacing:-0.03em;margin:6px 0 18px}
+.pg-payfraud .kv{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid rgba(255,255,255,0.16);font-size:16px;color:#CFE6DB}
+.pg-payfraud .kv b{color:#FFFFFF;font-size:20px;font-weight:500}
+.pg-payfraud .calc__cta{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:8px;background:#FFFFFF;color:#0A0C0E !important;font-weight:500}
+.pg-payfraud .fiu{border-radius:24px;background:#0A0D0C;color:#FFFFFF;display:flex;flex-wrap:wrap;gap:40px;padding:clamp(36px,4vw,60px);box-sizing:border-box}
+.pg-payfraud .fiu__l{flex:1 1 480px;min-width:min(100%,300px);display:flex;flex-direction:column}
+.pg-payfraud .fiu__l h2{margin:0;font-weight:500;font-size:clamp(32px,3.2vw,48px);line-height:1.1;letter-spacing:-0.02em}
+.pg-payfraud .fiu__l p{margin:16px 0 0;font-size:19px;line-height:28px;color:#B9C6C0;max-width:520px}
+.pg-payfraud .fiu__cta{margin-top:32px;align-self:flex-start;display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:8px;background:#1DB980;color:#0A0C0E !important;font-size:17px;font-weight:500}
+.pg-payfraud .fiu__r{flex:1 1 520px;min-width:min(100%,300px);display:grid;gap:10px;align-content:center}
+.pg-payfraud .fiu__row{display:flex;align-items:center;gap:18px;padding:18px 20px;border-radius:14px;background:#12241C}
+.pg-payfraud .fiu__row b{display:block;font-size:19px;font-weight:500}
+.pg-payfraud .fiu__row span:not(.flag){font-size:14px;color:#B9C6C0}
+.pg-payfraud .flag{width:52px;height:52px;border-radius:12px;background:#0B5D45;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:17px;flex:none}
+.pg-payfraud .faqs{max-width:880px;margin:40px auto 0}
+.pg-payfraud .faqi{border-bottom:1px solid #E1E6E3}
+.pg-payfraud .faqa{margin:0;padding:0 48px 26px 0;font-size:18px;line-height:28px;color:#3F4744}
+.pg-payfraud .endcta{position:relative;overflow:hidden;border-radius:24px;padding:clamp(44px,5vw,80px);background-image:linear-gradient(135deg,#0E6B4F 0%,#07432F 60%,#031F16 100%);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:32px;color:#FFFFFF}
+.pg-payfraud .endcta__map{position:absolute;right:-40px;top:-60px;width:420px;opacity:0.16}
+.pg-payfraud .endcta h2{margin:0;font-weight:500;font-size:clamp(34px,3.6vw,54px);line-height:1.08;letter-spacing:-0.02em}
+.pg-payfraud .endcta p{margin:14px 0 0;font-size:19px;line-height:28px;color:#CFE6DB}
+.pg-payfraud .btn-white{background:#FFFFFF;color:#0A0C0E !important}
+.pg-payfraud .btn-line{border:1.25px solid rgba(255,255,255,0.45);color:#FFFFFF !important}
+.pg-payfraud .scr{background:#FFFFFF;border-radius:16px;box-shadow:0 24px 60px rgba(10,40,28,0.16);overflow:hidden;font-size:13px}
+.pg-payfraud .scr__top{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid #EEF1F0;font-size:15px}
+.pg-payfraud .scr__filters{display:flex;gap:6px;padding:12px 18px 4px}
+.pg-payfraud .fchip{padding:5px 11px;border-radius:999px;border:1px solid #E1E6E3;font-size:12px;color:#3F4744}
+.pg-payfraud .fchip--on{background:#0A0C0E;border-color:#0A0C0E;color:#FFFFFF}
+.pg-payfraud .tx__r{display:grid;grid-template-columns:40px 1.4fr 1fr 1.15fr 74px;gap:8px;align-items:center;padding:10px 16px;border-top:1px solid #F1F4F2}
+.pg-payfraud .tx__h{border-top:0;font-size:11px;color:#8E959C;font-weight:500;padding-top:12px;padding-bottom:6px}
+.pg-payfraud .tx__n{font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pg-payfraud .tx__c{color:#5B6461;white-space:nowrap}
+.pg-payfraud .tx__a{text-align:right;font-weight:600;white-space:nowrap}
+.pg-payfraud .score{display:inline-flex;align-items:center;justify-content:center;width:34px;height:24px;border-radius:6px;font-size:12px;font-weight:700}
+.pg-payfraud .score--ok{background:#E3F6EC;color:#0A6B47}
+.pg-payfraud .score--warn{background:#FDF1E2;color:#8A4B0B}
+.pg-payfraud .score--bad{background:#D64545;color:#FFFFFF}
+.pg-payfraud .why{display:flex;gap:16px;align-items:flex-end;margin:0 12px 12px;padding:14px;border-radius:10px;background:#FDF0F0}
+.pg-payfraud .minibars{position:relative;display:flex;align-items:flex-end;gap:5px;height:64px;width:110px;flex:none}
+.pg-payfraud .minibars span{flex:1;background:#D64545;border-radius:3px 3px 0 0}
+.pg-payfraud .minibars i{position:absolute;left:0;right:0;top:0;border-top:1.5px dashed #8C2626}
+.pg-payfraud .drawer{position:absolute;left:562px;top:268px;width:198px;background:#FFFFFF;border-radius:14px;box-shadow:0 24px 60px rgba(10,40,28,0.22);padding:16px;box-sizing:border-box;border-top:4px solid #D64545}
+@media (max-width: 720px){.pg-payfraud .vc p{margin-left:0}}
+.pg-payfraud .lvl{display:inline-flex;align-items:center;justify-content:center;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:0.02em;white-space:nowrap}
+.pg-payfraud .lvl--LOW{background:#E3F6EC;color:#0A6B47}
+.pg-payfraud .lvl--MEDIUM{background:#FDF1E2;color:#8A4B0B}
+.pg-payfraud .lvl--HIGH{background:#FBE3E3;color:#B23434}
+.pg-payfraud .pts{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:24px;padding:0 6px;border-radius:6px;background:#F1F5F3;font-size:12px;font-weight:700;color:#0A0C0E;box-sizing:border-box}
+.pg-payfraud .src{display:inline-flex;align-items:center;padding:2px 8px;border-radius:6px;font-size:11px;font-weight:600;white-space:nowrap}
+.pg-payfraud .src--ID{background:#E1ECF7;color:#1F4E86}
+.pg-payfraud .src--SCR{background:#FBE3E3;color:#8C2626}
+.pg-payfraud .src--MAN{background:#F1F5F3;color:#3F4744}
+.pg-payfraud .src--REG{background:#EFE7FB;color:#5B32A0}
+.pg-payfraud .src--BIO{background:#E3F6EC;color:#0A6B47}
+.pg-payfraud .tbl{width:100%;border-collapse:collapse;font-size:13px}
+.pg-payfraud .tbl th{text-align:left;font-weight:500;color:#8E959C;font-size:11px;padding:6px 8px}
+.pg-payfraud .tbl td{padding:9px 8px;border-top:1px solid #EEF1F0}
+.pg-payfraud .tbl td.num, .pg-payfraud .tbl th.num{text-align:right;font-variant-numeric:tabular-nums}
+.pg-payfraud .mono{font-variant-numeric:tabular-nums}
+.pg-payfraud .loop{margin:48px auto 0;max-width:1320px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px;counter-reset:x}
+.pg-payfraud .loop__s{position:relative;padding:26px;border-radius:18px;background:#F2F6F4;display:flex;flex-direction:column;gap:8px}
+.pg-payfraud .loop__n{width:34px;height:34px;border-radius:10px;background:#0B5D45;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-weight:600}
+.pg-payfraud .loop__s b{font-size:20px;font-weight:500}
+.pg-payfraud .loop__s p{margin:0;font-size:16px;line-height:24px;color:#3F4744}
+.pg-payfraud .loop__note{margin:20px auto 0;max-width:820px;text-align:center;font-size:16px;line-height:24px;color:#5B6461}
+.pg-payfraud .stp{margin:48px auto 0;max-width:1320px;padding:28px;border-radius:24px;background:#F2F6F4}
+.pg-payfraud .stp__tabs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:6px}
+.pg-payfraud .stp__tab{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:12px;border:1px solid #D5DCD8;background:#FFFFFF;font:inherit;font-size:15px;font-weight:500;text-align:left;cursor:pointer;color:#0A0C0E}
+.pg-payfraud .stp__tab:hover{border-color:#9AA39F}
+.pg-payfraud .stp__n{width:24px;height:24px;border-radius:7px;background:#EEF1F0;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex:none}
+.pg-payfraud .stp__tab.is-done .stp__n{background:#DCEFE5;color:#0B5D45}
+.pg-payfraud .stp__tab.is-on{background:#0A0C0E;border-color:#0A0C0E;color:#FFFFFF}
+.pg-payfraud .stp__tab.is-on .stp__n{background:#1DB980;color:#0A0C0E}
+.pg-payfraud .stp__body{margin-top:20px;display:flex;flex-wrap:wrap;gap:24px;align-items:stretch}
+.pg-payfraud .stp__txt{flex:1 1 380px;min-width:min(100%,300px);display:flex;flex-direction:column;padding:8px}
+.pg-payfraud .stp__k{font-size:14px;color:#5B6461}
+.pg-payfraud .stp__txt h3{margin:8px 0 0;font-size:32px;font-weight:500;line-height:1.15;letter-spacing:-0.01em}
+.pg-payfraud .stp__txt p{margin:12px 0 0;font-size:18px;line-height:27px;color:#3F4744}
+.pg-payfraud .stp__nav{margin-top:auto;padding-top:24px;display:flex;gap:8px}
+.pg-payfraud .stp__vis{flex:1 1 520px;min-width:min(100%,300px);min-height:360px;border-radius:18px;background:#0B5D45;background-image:radial-gradient(120% 90% at 0% 0%,#1F8A66 0%,#0B5D45 55%,#08402F 100%);display:flex;align-items:center;justify-content:center;padding:28px;box-sizing:border-box}
+.pg-payfraud .cho{margin:48px auto 0;max-width:1320px;padding:32px;border-radius:24px;background:#F2F6F4}
+.pg-payfraud .cho__body{margin-top:28px;display:flex;flex-wrap:wrap;gap:24px}
+.pg-payfraud .cho__l{flex:1 1 420px;min-width:min(100%,300px)}
+.pg-payfraud .cho__l h3{margin:0;font-size:32px;font-weight:500;line-height:1.15}
+.pg-payfraud .cho__l p{margin:12px 0 0;font-size:18px;line-height:27px;color:#3F4744}
+.pg-payfraud .cho__r{flex:1 1 480px;min-width:min(100%,300px);background:#FFFFFF;border-radius:16px;padding:8px 22px}
+.pg-payfraud .cho__row{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:15px 0;border-top:1px solid #EEF1F0;font-size:15px}
+.pg-payfraud .cho__row:first-child{border-top:0}
+.pg-payfraud .cho__row span{color:#5B6461}
+.pg-payfraud .cho__row b{font-weight:500;text-align:right}
+.pg-payfraud .tag{display:inline-block;margin-top:16px;padding:5px 12px;border-radius:999px;background:#DCEFE5;color:#0B5D45;font-size:13px;font-weight:600}
+.pg-payfraud .msc{display:flex;align-items:baseline;gap:10px}
+.pg-payfraud .msc b{font-size:44px;font-weight:500;letter-spacing:-0.02em;line-height:1}
+.pg-payfraud .msc span{font-size:13px;color:#5B6461}
+.pg-payfraud .mband{position:relative;margin-top:14px;display:flex;height:30px;border-radius:8px;overflow:hidden;font-size:11px;font-weight:600}
+.pg-payfraud .mband span{display:flex;align-items:center;justify-content:center;min-width:0}
+.pg-payfraud .mband span:nth-child(1){background:#E3F6EC;color:#0A6B47}
+.pg-payfraud .mband span:nth-child(2){background:#FDF1E2;color:#8A4B0B}
+.pg-payfraud .mband span:nth-child(3){background:#FBE3E3;color:#B23434}
+.pg-payfraud .mband i{position:absolute;top:-2px;bottom:-2px;width:3px;margin-left:-1.5px;background:#0A0C0E;border-radius:2px}
+.pg-payfraud .ctr{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) 36px;align-items:center;gap:12px;padding:9px 0;border-top:1px solid #EEF1F0;font-size:13px}
+.pg-payfraud .ctr__t{color:#16181D}
+.pg-payfraud .ctr__b{height:8px;border-radius:4px;background:#F1F5F3;overflow:hidden}
+.pg-payfraud .ctr__i{display:block;height:100%;border-radius:4px}
+.pg-payfraud .ctr__i--bad{background:#D64545}
+.pg-payfraud .ctr__i--warn{background:#E0A030}
+.pg-payfraud .ctr__i--grey{background:#9AA39F}
+.pg-payfraud .ctr__v{text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+.pg-payfraud .pty2{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.pg-payfraud .pty{background:#F7FAF8;border-radius:12px;padding:14px 14px 4px}
+.pg-payfraud .pty__r{font-size:11px;color:#5B6461}
+.pg-payfraud .pty__n{font-size:15px;font-weight:600;margin:2px 0 6px}
+.pg-payfraud .pty .rl{padding:9px 0;border-top-color:#E6ECE9}
+.pg-payfraud .vrd{margin-top:12px;padding:12px 14px;border-radius:10px;font-size:13px;line-height:1.45}
+.pg-payfraud .vrd--bad{background:#FBE3E3;color:#8C2626}
+.pg-payfraud .vrd--warn{background:#FDF1E2;color:#6E3C08}
+.pg-payfraud .vrd--ok{background:#E3F6EC;color:#0A5A3C}
+.pg-payfraud .pair{margin:48px auto 0;max-width:1320px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px}
+.pg-payfraud .pair__c{display:flex;flex-direction:column;gap:8px;padding:24px;border-radius:18px;background:#F2F6F4;color:#0A0C0E;text-decoration:none;transition:background .15s}
+.pg-payfraud .pair__c:hover{background:#E6EFEA}
+.pg-payfraud .pair__c b{margin-top:8px;font-size:20px;font-weight:500}
+.pg-payfraud .pair__c > span:nth-of-type(2){font-size:15px;line-height:22px;color:#3F4744}
+.pg-payfraud .pair__go{margin-top:auto;padding-top:8px;display:inline-flex;align-items:center;gap:6px;font-size:15px;font-weight:500;color:#0B5D45}
+.pg-payfraud .tl{position:absolute;left:0;top:0;width:400px}
+.pg-payfraud .tl__e{display:flex;gap:14px;align-items:flex-start;background:#FFFFFF;border-radius:12px;box-shadow:0 12px 30px rgba(10,40,28,0.1);padding:12px 14px;margin-bottom:10px}
+.pg-payfraud .tl__t{font-size:12px;color:#5B6461;width:42px;flex:none;padding-top:2px;font-variant-numeric:tabular-nums}
+.pg-payfraud .tl__e b{display:block;font-size:14px;font-weight:600}
+.pg-payfraud .tl__e span{font-size:12px;color:#5B6461}
+.pg-payfraud .tl__d{width:10px;height:10px;border-radius:50%;flex:none;margin-top:5px}
+.pg-payfraud .tl__d--bad{background:#D64545}
+.pg-payfraud .tl__d--warn{background:#E0A030}
+.pg-payfraud .tl__d--grey{background:#9AA39F}
+.pg-payfraud .blk2{position:absolute;right:0;width:330px;background:#FFFFFF;border-radius:14px;box-shadow:0 24px 60px rgba(10,40,28,0.18);padding:18px;box-sizing:border-box}
+.pg-payfraud .blk2--bad{border-top:4px solid #D64545}
+.pg-payfraud .blk2--warn{border-top:4px solid #E0A030}
+.pg-payfraud .blk2--ok{border-top:4px solid #1DB980}
+.pg-payfraud .blk2__h{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.pg-payfraud .blk2__h b{font-size:16px;font-weight:600}
+.pg-payfraud .blk2 p{margin:8px 0 0;font-size:13px;line-height:1.45;color:#3F4744}
+.pg-payfraud .blk2__s{margin-top:12px;padding:10px 12px;border-radius:8px;background:#F2F6F4;font-size:12px;font-weight:600}
+@keyframes payfraud-pfr1{0%,1.0%{opacity:0;transform:translateY(8px);}5.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
+@keyframes payfraud-pfr2{0%,36.0%{opacity:1}38.0%,100%{opacity:0}}
+@keyframes payfraud-pfr3{0%,36.0%{opacity:0;transform:translateY(0px);}40.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
+@keyframes payfraud-pfr4{0%,6.0%{opacity:0;transform:translateY(8px); filter:blur(6px);}10.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
+@keyframes payfraud-pfr5{0%,9.0%{opacity:0;transform:translateY(4px);}13.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
+@keyframes payfraud-pfr6{0%,12.0%{opacity:0;transform:translateY(4px);}16.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
+@keyframes payfraud-pfr7{0%,15.0%{opacity:0;transform:translateY(4px);}19.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
+@keyframes payfraud-pfr8{0%,18.0%{opacity:0;transform:translateY(4px);}22.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
+@keyframes payfraud-pfr9{0%,22.0%{opacity:0;transform:translateY(4px);}26.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
+@keyframes payfraud-pfr10{0%,25.0%{opacity:0;transform:translateY(4px);}29.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
+@keyframes payfraud-pfr11{0%,28.0%{opacity:0;transform:translateY(4px);}32.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
+@keyframes payfraud-pfr12{0%,31.0%{opacity:0;transform:translateY(4px);}35.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
+@keyframes payfraud-pfr13{0%,39.0%{opacity:0;transform:translateY(8px); filter:blur(6px);}43.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
+@keyframes payfraud-pfr14{0%,46.0%{opacity:0;transform:translateY(8px);}50.0%,88%{opacity:1;transform:none;filter:none}94%,100%{opacity:0;transform:none}}
+@media (prefers-reduced-motion: reduce){.pg-payfraud .pp-stage *{animation:none !important}
+.pg-payfraud .pp-out{opacity:0 !important}}

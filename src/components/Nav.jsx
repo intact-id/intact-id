@@ -145,6 +145,9 @@ export default function Nav() {
                 <Link className="menulink" to="/regulatory-reporting">
                   Regulatory reporting (STR/SAR)
                 </Link>
+                <Link className="menulink" to="/agentic-payments">
+                  Agentic payment screening
+                </Link>
               </div>
               <div style={{ padding: "40px 44px", display: "flex", flexDirection: "column", gap: "18px", borderLeft: "1px solid #ECEFEE" }}>
                 <div style={{ fontWeight: "500", fontSize: "28px", lineHeight: "33.6px", color: "#16181D", marginBottom: "4px" }}>
@@ -225,20 +228,23 @@ export default function Nav() {
                 <Link className="menulink" to="/fraud-prevention">
                   Fraud prevention
                 </Link>
-                <Link className="menulink" to="/fraud-prevention">
+                <Link className="menulink" to="/identity-fraud#new-accounts">
                   New account fraud prevention
                 </Link>
-                <Link className="menulink" to="/fraud-prevention">
+                <Link className="menulink" to="/identity-fraud">
                   Identity fraud prevention
                 </Link>
-                <Link className="menulink" to="/fraud-prevention">
+                <Link className="menulink" to="/account-takeover">
                   Account takeover prevention
                 </Link>
-                <Link className="menulink" to="/fraud-prevention">
+                <Link className="menulink" to="/payment-fraud">
                   Payment fraud prevention
                 </Link>
-                <Link className="menulink" to="/fraud-prevention">
+                <Link className="menulink" to="/money-muling">
                   Money muling prevention
+                </Link>
+                <Link className="menulink" to="/agentic-payments">
+                  Agentic payment screening
                 </Link>
               </div>
               <div style={{ padding: "40px 44px", display: "flex", flexDirection: "column", gap: "18px", borderLeft: "1px solid #ECEFEE" }}>
