@@ -3,6 +3,7 @@ import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-route
 import HomePage from './pages/HomePage.jsx';
 import KycPage from './pages/KycPage.jsx';
 import KybPage from './pages/KybPage.jsx';
+import PricingPage from './pages/PricingPage.jsx';
 import LivenessPage from './pages/LivenessPage.jsx';
 import IdVerificationPage from './pages/IdVerificationPage.jsx';
 import FraudPreventionPage from './pages/FraudPreventionPage.jsx';
@@ -28,6 +29,7 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/kyc" element={<KycPage />} />
         <Route path="/kyb" element={<KybPage />} />
+        <Route path="/pricing" element={<PricingPage />} />
         <Route path="/liveness" element={<LivenessPage />} />
         <Route path="/id-verification" element={<IdVerificationPage />} />
         <Route path="/fraud-prevention" element={<FraudPreventionPage />} />
