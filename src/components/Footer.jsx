@@ -138,20 +138,23 @@ export default function Footer() {
                   <Link className="flink" to="/fraud-prevention">
                     Fraud prevention
                   </Link>
-                  <Link className="flink" to="/fraud-prevention">
+                  <Link className="flink" to="/identity-fraud#new-accounts">
                     New account fraud
                   </Link>
-                  <Link className="flink" to="/fraud-prevention">
+                  <Link className="flink" to="/identity-fraud">
                     Identity fraud
                   </Link>
-                  <Link className="flink" to="/fraud-prevention">
+                  <Link className="flink" to="/account-takeover">
                     Account takeover
                   </Link>
-                  <Link className="flink" to="/fraud-prevention">
+                  <Link className="flink" to="/payment-fraud">
                     Payment fraud
                   </Link>
-                  <Link className="flink" to="/fraud-prevention">
+                  <Link className="flink" to="/money-muling">
                     Money muling
+                  </Link>
+                  <Link className="flink" to="/agentic-payments">
+                    Agentic payments
                   </Link>
                   <div style={{ fontSize: "13px", color: "rgba(232,237,235,0.5)", marginTop: "6px" }}>
                     Contact

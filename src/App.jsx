@@ -6,6 +6,11 @@ import TermsPage from './pages/TermsPage.jsx';
 import CookieBanner from './components/CookieBanner.jsx';
 import KycPage from './pages/KycPage.jsx';
 import KybPage from './pages/KybPage.jsx';
+import AgenticPaymentsPage from './pages/AgenticPaymentsPage.jsx';
+import IdentityFraudPage from './pages/IdentityFraudPage.jsx';
+import AccountTakeoverPage from './pages/AccountTakeoverPage.jsx';
+import MoneyMulingPage from './pages/MoneyMulingPage.jsx';
+import PaymentFraudPage from './pages/PaymentFraudPage.jsx';
 import ContactPage from './pages/ContactPage.jsx';
 import PartnersPage from './pages/PartnersPage.jsx';
 import SecurityPage from './pages/SecurityPage.jsx';
@@ -46,6 +51,11 @@ export default function App() {
         <Route path="/terms" element={<TermsPage />} />
         <Route path="/kyc" element={<KycPage />} />
         <Route path="/kyb" element={<KybPage />} />
+        <Route path="/agentic-payments" element={<AgenticPaymentsPage />} />
+        <Route path="/identity-fraud" element={<IdentityFraudPage />} />
+        <Route path="/account-takeover" element={<AccountTakeoverPage />} />
+        <Route path="/money-muling" element={<MoneyMulingPage />} />
+        <Route path="/payment-fraud" element={<PaymentFraudPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/partners" element={<PartnersPage />} />
         <Route path="/security" element={<SecurityPage />} />
