@@ -145,8 +145,8 @@ export default function Nav() {
                 <Link className="menulink" to="/regulatory-reporting">
                   Regulatory reporting (STR/SAR)
                 </Link>
-                <Link className="menulink" to="/agentic-payments">
-                  Agentic payment screening
+                <Link className="menulink" to="/agentic-screening">
+                  Agentic transaction screening
                 </Link>
               </div>
               <div style={{ padding: "40px 44px", display: "flex", flexDirection: "column", gap: "18px", borderLeft: "1px solid #ECEFEE" }}>
@@ -243,8 +243,8 @@ export default function Nav() {
                 <Link className="menulink" to="/money-muling">
                   Money muling prevention
                 </Link>
-                <Link className="menulink" to="/agentic-payments">
-                  Agentic payment screening
+                <Link className="menulink" to="/agentic-screening">
+                  Agentic transaction screening
                 </Link>
               </div>
               <div style={{ padding: "40px 44px", display: "flex", flexDirection: "column", gap: "18px", borderLeft: "1px solid #ECEFEE" }}>
