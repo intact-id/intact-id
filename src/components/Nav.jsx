@@ -29,29 +29,6 @@ export default function Nav() {
     <>
     <header style={{ position: "sticky", top: "0", zIndex: "30", background: "#FFFFFF" }}>
       <div className="wrap" style={{ maxWidth: "1920px", margin: "0 auto", padding: "0 56px", boxSizing: "border-box" }}>
-        <div style={{ height: "40px", display: "flex", justifyContent: "flex-end", alignItems: "flex-start", gap: "20px", paddingTop: "10px", boxSizing: "border-box", fontSize: "12px", lineHeight: "17.76px" }}>
-          <a className="util" href="#" style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="12" cy="12" r="9" />
-              <path d="m8.5 12 2.5 2.5 4.5-5" />
-            </svg>
-            I&apos;m getting verified
-          </a>
-          <a className="util" href="#" style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="12" cy="8" r="4" />
-              <path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6" />
-            </svg>
-            Log in
-          </a>
-          <a className="util" href="#" style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="12" cy="12" r="9" />
-              <path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z" />
-            </svg>
-            English
-          </a>
-        </div>
         <nav aria-label="Main" style={{ height: "72px", display: "flex", alignItems: "center", position: "relative", fontSize: "16px", fontWeight: "500", lineHeight: "22.4px" }}>
           <Link to="/" aria-label="Intact ID home" style={{ display: "flex", alignItems: "center", flex: "1 1 0" }}>
             <Logo size={40} />
@@ -266,10 +243,16 @@ export default function Nav() {
               </div>
               <div style={{ padding: "40px 44px", display: "flex", flexDirection: "column", gap: "18px", borderLeft: "1px solid #ECEFEE" }}>
                 <div style={{ fontWeight: "500", fontSize: "28px", lineHeight: "33.6px", color: "#16181D", marginBottom: "4px" }}>
-                  Workforce
+                  Contact
                 </div>
-                <a className="menulink" href="#" style={{ fontSize: "24px", lineHeight: "28.8px" }}>
-                  Workforce verification
+                <Link className="menulink" to="/contact" style={{ fontSize: "24px", lineHeight: "28.8px" }}>
+                  Talk to our team
+                </Link>
+                <a className="menulink" href="mailto:contact@intact-io.com" style={{ fontSize: "20px", lineHeight: "26px" }}>
+                  contact@intact-io.com
+                </a>
+                <a className="menulink" href="mailto:partner@intact-io.com" style={{ fontSize: "20px", lineHeight: "26px" }}>
+                  partner@intact-io.com
                 </a>
               </div>
             </div>

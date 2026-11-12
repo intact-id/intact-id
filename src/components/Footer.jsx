@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { LogoMark } from './Logo.jsx';
+import { openCookieSettings } from '../lib/cookies.js';
 import './footer.css';
 
 export default function Footer() {
@@ -153,11 +154,11 @@ export default function Footer() {
                     Money muling
                   </Link>
                   <div style={{ fontSize: "13px", color: "rgba(232,237,235,0.5)", marginTop: "6px" }}>
-                    Workforce
+                    Contact
                   </div>
-                  <a className="flink" href="#">
-                    Workforce verification
-                  </a>
+                  <Link className="flink" to="/contact">
+                    Talk to our team
+                  </Link>
                 </div>
               </div>
             </div>
@@ -207,9 +208,12 @@ export default function Footer() {
                 <Link className="flink" to="/security">
                   Security
                 </Link>
-                <a className="flink" href="#">
+                <Link className="flink" to="/privacy">
                   Privacy notice
-                </a>
+                </Link>
+                <Link className="flink" to="/terms">
+                  Terms of use
+                </Link>
                 <Link className="flink" to="/contact">
                   Contact
                 </Link>
@@ -226,15 +230,15 @@ export default function Footer() {
             © 2026 Intact ID · Nairobi, Kenya
           </span>
           <span style={{ display: "flex", gap: "24px" }}>
-            <a className="flink" href="#">
+            <Link className="flink" to="/privacy">
               Privacy
-            </a>
-            <a className="flink" href="#">
+            </Link>
+            <Link className="flink" to="/terms">
               Terms
-            </a>
-            <a className="flink" href="#">
-              Cookies
-            </a>
+            </Link>
+            <button type="button" className="flink" onClick={openCookieSettings} style={{ background: "none", border: "0", padding: "0", font: "inherit", cursor: "pointer" }}>
+              Cookie settings
+            </button>
           </span>
         </div>
       </div>

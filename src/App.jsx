@@ -1,6 +1,9 @@
 import { useEffect } from 'react';
 import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import HomePage from './pages/HomePage.jsx';
+import PrivacyPage from './pages/PrivacyPage.jsx';
+import TermsPage from './pages/TermsPage.jsx';
+import CookieBanner from './components/CookieBanner.jsx';
 import KycPage from './pages/KycPage.jsx';
 import KybPage from './pages/KybPage.jsx';
 import ContactPage from './pages/ContactPage.jsx';
@@ -39,6 +42,8 @@ export default function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/privacy" element={<PrivacyPage />} />
+        <Route path="/terms" element={<TermsPage />} />
         <Route path="/kyc" element={<KycPage />} />
         <Route path="/kyb" element={<KybPage />} />
         <Route path="/contact" element={<ContactPage />} />
@@ -63,6 +68,7 @@ export default function App() {
         <Route path="/transaction-monitoring" element={<TransactionMonitoringPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
+      <CookieBanner />
     </BrowserRouter>
   );
 }
