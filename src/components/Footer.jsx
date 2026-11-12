@@ -67,7 +67,7 @@ export default function Footer() {
                   <Link className="flink" to="/anomaly-detection">
                     Behavioural anomaly detection
                   </Link>
-                  <Link className="flink" to="/transaction-monitoring">
+                  <Link className="flink" to="/alerts-and-cases">
                     {"Alerts & case management"}
                   </Link>
                   <Link className="flink" to="/transaction-monitoring">

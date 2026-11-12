@@ -159,7 +159,7 @@ export default function Nav() {
                 <Link className="menulink" to="/anomaly-detection">
                   Behavioural anomaly detection
                 </Link>
-                <Link className="menulink" to="/transaction-monitoring">
+                <Link className="menulink" to="/alerts-and-cases">
                   {"Alerts & case management"}
                 </Link>
                 <Link className="menulink" to="/customer-risk-assessment">
