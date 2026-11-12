@@ -66,9 +66,9 @@ export default function Nav() {
             <a className="navitem" href="#">
               Resources
             </a>
-            <a className="navitem" href="#">
+            <Link className="navitem" to="/about">
               Company
-            </a>
+            </Link>
             <Link className="navitem" to="/pricing">
               Pricing
             </Link>
