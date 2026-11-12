@@ -165,7 +165,7 @@ export default function Nav() {
                 <Link className="menulink" to="/customer-risk-assessment">
                   Customer risk assessment
                 </Link>
-                <Link className="menulink" to="/transaction-monitoring">
+                <Link className="menulink" to="/regulatory-reporting">
                   Regulatory reporting (STR/SAR)
                 </Link>
               </div>
