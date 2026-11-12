@@ -3,6 +3,7 @@ import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-route
 import HomePage from './pages/HomePage.jsx';
 import KycPage from './pages/KycPage.jsx';
 import KybPage from './pages/KybPage.jsx';
+import AnomalyDetectionPage from './pages/AnomalyDetectionPage.jsx';
 import RulesTypologiesPage from './pages/RulesTypologiesPage.jsx';
 import RealTimeScreeningPage from './pages/RealTimeScreeningPage.jsx';
 import AuditableRiskPage from './pages/AuditableRiskPage.jsx';
@@ -33,6 +34,7 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/kyc" element={<KycPage />} />
         <Route path="/kyb" element={<KybPage />} />
+        <Route path="/anomaly-detection" element={<AnomalyDetectionPage />} />
         <Route path="/rules-and-typologies" element={<RulesTypologiesPage />} />
         <Route path="/real-time-screening" element={<RealTimeScreeningPage />} />
         <Route path="/auditable-risk-scoring" element={<AuditableRiskPage />} />
