@@ -27,11 +27,11 @@ export default function Nav() {
 
   return (
     <>
-    <header style={{ position: "sticky", top: "0", zIndex: "30", background: "#FFFFFF" }}>
+    <header style={{ position: "sticky", top: "0", zIndex: "30", background: "#FFFFFF", borderBottom: "1px solid #E6EBE8" }}>
       <div className="wrap" style={{ maxWidth: "1920px", margin: "0 auto", padding: "0 56px", boxSizing: "border-box" }}>
-        <nav aria-label="Main" style={{ height: "72px", display: "flex", alignItems: "center", position: "relative", fontSize: "16px", fontWeight: "500", lineHeight: "22.4px" }}>
+        <nav aria-label="Main" style={{ height: "88px", display: "flex", alignItems: "center", position: "relative", fontSize: "19px", fontWeight: "500", lineHeight: "26px" }}>
           <Link to="/" aria-label="Intact ID home" style={{ display: "flex", alignItems: "center", flex: "1 1 0" }}>
-            <Logo size={40} />
+            <Logo size={46} fontSize={27} />
           </Link>
           <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
             <button className="navitem" type="button" id="productsBtn" aria-controls="menu" aria-expanded={open === 'products'} onClick={() => toggle('products')} style={open === 'products' ? { color: '#0B5D45' } : undefined} {...hoverProps('products')}>
@@ -51,10 +51,10 @@ export default function Nav() {
             </Link>
           </div>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", gap: "8px", flex: "1 1 0" }}>
-            <a className="navitem" href="#" style={{ padding: "8px 12px" }}>
+            <a className="navitem" href="#" style={{ padding: "10px 16px" }}>
               Sign up
             </a>
-            <a className="btn-primary" href="#" style={{ padding: "8px 12px", borderRadius: "8px" }}>
+            <a className="btn-primary" href="#" style={{ padding: "11px 20px", borderRadius: "10px" }}>
               Get started
             </a>
           </div>
