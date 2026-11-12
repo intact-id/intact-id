@@ -3,6 +3,8 @@ import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-route
 import HomePage from './pages/HomePage.jsx';
 import KycPage from './pages/KycPage.jsx';
 import KybPage from './pages/KybPage.jsx';
+import AuditableRiskPage from './pages/AuditableRiskPage.jsx';
+import RiskModelsPage from './pages/RiskModelsPage.jsx';
 import PricingPage from './pages/PricingPage.jsx';
 import LivenessPage from './pages/LivenessPage.jsx';
 import IdVerificationPage from './pages/IdVerificationPage.jsx';
@@ -29,6 +31,8 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/kyc" element={<KycPage />} />
         <Route path="/kyb" element={<KybPage />} />
+        <Route path="/auditable-risk-scoring" element={<AuditableRiskPage />} />
+        <Route path="/risk-models" element={<RiskModelsPage />} />
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/liveness" element={<LivenessPage />} />
         <Route path="/id-verification" element={<IdVerificationPage />} />
