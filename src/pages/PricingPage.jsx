@@ -7,15 +7,17 @@ import './pricing.css';
 
 const ACC = {};
 const SERVICES = [
-{ key: 'doc', name: 'ID document check', note: 'Reads the ID and checks it is real and valid' },
-{ key: 'xcheck', name: 'Data cross-check', note: 'Compares the details across the document', needs: ['doc'] },
-{ key: 'live', name: 'Selfie and liveness', note: 'Confirms a real person is present' },
-{ key: 'face', name: 'Face match', note: 'Matches the selfie to the ID photo', needs: ['doc', 'live'] }
+{ key: 'doc', name: 'ID verification', note: 'Reads the ID and checks it is real and valid', plan: 1 },
+{ key: 'email', name: 'Email verification', note: 'Confirms the email address is real and in use', plan: 1 },
+{ key: 'live', name: 'Liveness', note: 'Confirms a real person is present', plan: 1 },
+{ key: 'face', name: 'Face match', note: 'Matches the selfie to the ID photo', needs: ['doc', 'live'], plan: 1 },
+{ key: 'aml', name: 'AML screening', note: 'Sanctions, PEP and watchlists at sign-up', plan: 2 },
+{ key: 'ongoing', name: 'Ongoing AML screening', note: 'Rescreens customers when lists change', needs: ['aml'], plan: 2 }
 ];
 const EXTRA = [
 { key: 'iprs', name: 'IPRS registry match', note: 'Confirms Kenyan ID details with the national register' },
-{ key: 'aml', name: 'Sanctions and PEP', note: 'Screens against sanctions, PEP and watchlists' },
-{ key: 'cra', name: 'Customer risk assessment', note: 'Scores each customer low, medium or high' }
+{ key: 'cra', name: 'Customer risk assessment', note: 'Scores each customer low, medium or high' },
+{ key: 'tm', name: 'Transaction monitoring', note: 'Watches payments for money laundering and fraud' }
 ];
 const SOON = [{ key: 'poa', name: 'Proof of address' }, { key: 'age', name: 'Age check' }];
 const VOL = [['500', 500], ['1,000', 1000], ['5,000', 5000], ['10,000+', 10000]];
@@ -26,7 +28,7 @@ const FAQS = [
 ['Do I pay for checks a workflow does not use?','No. The widget only asks for what your workflow needs and only those checks run, so you only pay for them.'],
 ['Can I change plans later?','Yes. Switch plans or edit your workflow at any time. Verifications already in progress keep the version and price they started with.'],
 ['Do you offer volume discounts?','Yes. For larger monthly volumes or several workflows, talk to us about volume pricing.'],
-['How are registry, screening and risk checks priced?','IPRS registry match, sanctions and PEP screening and customer risk assessment are available now and priced with your volume. Proof of address and age checks are coming soon; talk to us if you need them early.']
+['How are registry, risk and transaction monitoring checks priced?','IPRS registry match, customer risk assessment and transaction monitoring are available now and priced with your volume. Proof of address and age checks are coming soon; talk to us if you need them early.']
 ];
 
 export default function PricingPage() {
@@ -42,7 +44,7 @@ const accVals = {};
 Object.keys(ACC).forEach(k => { accVals[k] = ACC[k].map((x, i) => { const o = (S.acc || {})[k] === i || ((S.acc || {})[k] === undefined && i === 0); return { q: x[0], a: x[1], open: o, expanded: o ? 'true' : 'false', rot: o ? 'rotate(180deg)' : 'none', toggle: () => set({ acc: Object.assign({}, S.acc, { [k]: o ? -1 : i }) }) }; }); });
 const faqVals = FAQS.map((f, i) => { const o = (S.faq === undefined ? 0 : S.faq) === i; return { q: f[0], a: f[1], open: o, expanded: o ? 'true' : 'false', rot: o ? 'rotate(180deg)' : 'none', toggle: () => set({ faq: o ? -1 : i }) }; });
 
-const on = Object.assign({ doc: true, xcheck: true, live: true, face: true }, S.svc || {});
+const on = Object.assign({ doc: true, email: true, live: true, face: true }, S.svc || {});
 const toggle = (k) => {
   const n = Object.assign({}, on, { [k]: !on[k] });
   const all = SERVICES.concat(EXTRA, SOON);
@@ -56,10 +58,11 @@ const anyExtra = EXTRA.some(s => on[s.key]);
 const vol = VOL[S.vol === undefined ? 1 : S.vol][1];
 let q;
 if (!added.length && !anySoon && !anyExtra) q = { label: 'Your price', price: '—', unit: 'Pick at least one check', per: 0, cta: 'Start free trial', note: '' };
-else if (anySoon || anyExtra) q = { label: 'Your price', price: 'Custom', unit: 'per verification, quoted for your volume', per: 0, cta: 'Get a quote', note: anySoon ? 'Includes checks that are coming soon. We will price this workflow with you and give you early access.' : 'Registry, screening and risk checks are priced with your volume. Tell us roughly how many verifications you run and we will quote the full workflow.' };
-else if (on.live || on.face) q = { label: 'Matches Standard KYC', price: '$1.50', unit: 'per verification', per: 1.5, cta: 'Start free trial', note: '' };
-else q = { label: 'Matches ID check', price: '$1.10', unit: 'per verification', per: 1.1, cta: 'Start free trial', note: '' };
-if (on.face) q.note = q.note || 'Face match needs the ID document and a selfie, so both are included.';
+else if (anySoon || anyExtra) q = { label: 'Your price', price: 'Custom', unit: 'per verification, quoted for your volume', per: 0, cta: 'Get a quote', note: anySoon ? 'Includes checks that are coming soon. We will price this workflow with you and give you early access.' : 'Registry, risk and transaction monitoring checks are priced with your volume. Tell us roughly how many verifications you run and we will quote the full workflow.' };
+else if (on.aml || on.ongoing) q = { label: 'Matches Compliance', price: '$1.50', unit: 'per verification', per: 1.5, cta: 'Start free trial', note: '' };
+else q = { label: 'Matches Basic', price: '$1.10', unit: 'per verification', per: 1.1, cta: 'Start free trial', note: '' };
+if (on.ongoing && !q.note) q.note = 'Ongoing screening builds on AML screening at sign-up, so both are included.';
+else if (on.face && !q.note) q.note = 'Face match needs the ID and a selfie, so ID verification and liveness are included.';
 q.month = q.per ? (vol >= 10000 ? 'Talk to us' : '$' + (q.per * vol).toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })) : ((anySoon || anyExtra) ? 'On quote' : '—');
 if (vol >= 10000 && q.per) q.cta = 'Talk to sales about volume';
 const page = {
@@ -85,29 +88,29 @@ quote: q
 </div>
 <div className="plans">
 <div className="plan">
-<h2>ID check</h2>
+<h2>Basic</h2>
 <div className="price"><b>$1.10</b><span>per<br />verification</span></div>
-<p>For lower-risk products that need to confirm a real, valid ID before letting someone in.</p>
+<p>For businesses that need to know a real person, with a real ID, is signing up.</p>
 <a href="#" className="pbtn">Start free trial</a>
 <div className="inc">Includes</div>
-<ul><li><span className="tk"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg></span><span>ID document check</span></li><li><span className="tk"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg></span><span>Data cross-check</span></li><li><span className="tk"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg></span><span>Dashboard and manual review</span></li><li><span className="tk"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg></span><span>Sandbox and API</span></li></ul>
+<ul><li><span className="tk"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg></span><span>ID verification</span></li><li><span className="tk"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg></span><span>Email verification</span></li><li><span className="tk"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg></span><span>Liveness</span></li><li><span className="tk"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg></span><span>Face match</span></li></ul>
 </div>
 <div className="plan plan--pop">
 <span className="pop">Most chosen</span>
-<h2>Standard KYC</h2>
+<h2>Compliance</h2>
 <div className="price"><b>$1.50</b><span>per<br />verification</span></div>
-<p>For regulated onboarding: confirm the ID and that the person holding it is real and present.</p>
+<p>For regulated businesses that must screen every customer at sign-up and keep screening them.</p>
 <a href="#" className="pbtn pbtn--dark">Start free trial</a>
-<div className="inc">Everything in ID check, plus</div>
-<ul><li><span className="tk"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg></span><span>Selfie and liveness</span></li><li><span className="tk"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg></span><span>Face match with the ID photo</span></li><li><span className="tk"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg></span><span>Automatic approve, reject or review</span></li><li><span className="tk"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg></span><span>Audit trail for every decision</span></li></ul>
+<div className="inc">Everything in Basic, plus</div>
+<ul><li><span className="tk"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg></span><span>AML screening: sanctions and PEP</span></li><li><span className="tk"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg></span><span>Ongoing AML screening</span></li></ul>
 </div>
 <div className="plan plan--talk">
 <h2>Let’s talk</h2>
 <div className="price price--talk"><span>Custom workflows<br />and volume pricing</span></div>
 <p>For larger volumes, business verification, or a workflow built around your own risk rules.</p>
 <a href="#" className="pbtn">Talk to sales</a>
-<div className="inc">Everything in Standard KYC, plus</div>
-<ul><li><span className="tk"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg></span><span>Your own workflow, priced per service</span></li><li><span className="tk"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg></span><span>Business verification (KYB)</span></li><li><span className="tk"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg></span><span>IPRS registry match (Kenya)</span></li><li><span className="tk"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg></span><span>Sanctions and PEP screening</span></li><li><span className="tk"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg></span><span>Customer risk assessment</span></li><li><span className="soon">Soon</span><span>Proof of address</span></li></ul>
+<div className="inc">Everything in Compliance, plus</div>
+<ul><li><span className="tk"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg></span><span>Transaction monitoring and transaction AML</span></li><li><span className="tk"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg></span><span>Business verification (KYB)</span></li><li><span className="tk"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg></span><span>IPRS registry match (Kenya)</span></li><li><span className="tk"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg></span><span>Customer risk assessment</span></li><li><span className="tk"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg></span><span>Your own workflow, priced per check</span></li><li><span className="soon">Soon</span><span>Proof of address</span></li></ul>
 </div>
 </div>
 <p className="fine">Prices in US dollars. You only pay for verifications run on live workflows; the sandbox is free.</p>
