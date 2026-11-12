@@ -69,9 +69,9 @@ export default function Nav() {
             <a className="navitem" href="#">
               Company
             </a>
-            <a className="navitem" href="#">
+            <Link className="navitem" to="/pricing">
               Pricing
-            </a>
+            </Link>
           </div>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", gap: "8px", flex: "1 1 0" }}>
             <a className="navitem" href="#" style={{ padding: "8px 12px" }}>
