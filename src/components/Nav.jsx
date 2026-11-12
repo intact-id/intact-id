@@ -173,12 +173,12 @@ export default function Nav() {
                 <div style={{ fontWeight: "500", fontSize: "28px", lineHeight: "33.6px", color: "#16181D", marginBottom: "4px" }}>
                   Platform
                 </div>
-                <Link className="menulink" to="/customer-risk-assessment" style={{ fontSize: "24px", lineHeight: "28.8px" }}>
+                <Link className="menulink" to="/auditable-risk-scoring" style={{ fontSize: "24px", lineHeight: "28.8px" }}>
                   Explainable risk scoring
                 </Link>
-                <a className="menulink" href="#" style={{ fontSize: "24px", lineHeight: "28.8px" }}>
+                <Link className="menulink" to="/auditable-risk-scoring" style={{ fontSize: "24px", lineHeight: "28.8px" }}>
                   {"Evidence & audit log"}
-                </a>
+                </Link>
                 <a className="menulink" href="#" style={{ fontSize: "24px", lineHeight: "28.8px" }}>
                   {"API & SDKs"}
                 </a>
@@ -225,19 +225,19 @@ export default function Nav() {
                 <div style={{ fontWeight: "500", fontSize: "28px", lineHeight: "33.6px", color: "#16181D", marginBottom: "10px" }}>
                   Customer risk assessment
                 </div>
-                <Link className="menulink" to="/customer-risk-assessment">
+                <Link className="menulink" to="/risk-models">
                   Configurable risk models
                 </Link>
-                <Link className="menulink" to="/customer-risk-assessment">
+                <Link className="menulink" to="/risk-models">
                   {"Individual & business risk scoring"}
                 </Link>
                 <Link className="menulink" to="/aml-screening">
                   {"Sanctions & PEP"}
                 </Link>
-                <Link className="menulink" to="/customer-risk-assessment">
+                <Link className="menulink" to="/customer-risk-assessment#reassessment">
                   {"Onboarding & ongoing reassessment"}
                 </Link>
-                <Link className="menulink" to="/customer-risk-assessment">
+                <Link className="menulink" to="/auditable-risk-scoring">
                   Auditable score breakdowns
                 </Link>
               </div>
