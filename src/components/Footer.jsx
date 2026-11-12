@@ -61,7 +61,7 @@ export default function Footer() {
                   <Link className="flink" to="/real-time-screening">
                     Real-time screening
                   </Link>
-                  <Link className="flink" to="/transaction-monitoring">
+                  <Link className="flink" to="/rules-and-typologies">
                     {"Rules & typologies"}
                   </Link>
                   <Link className="flink" to="/transaction-monitoring">

@@ -153,7 +153,7 @@ export default function Nav() {
                 <Link className="menulink" to="/real-time-screening">
                   Real-time transaction screening
                 </Link>
-                <Link className="menulink" to="/transaction-monitoring">
+                <Link className="menulink" to="/rules-and-typologies">
                   {"Rules & typologies"}
                 </Link>
                 <Link className="menulink" to="/transaction-monitoring">
