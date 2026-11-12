@@ -70,7 +70,7 @@ export default function Footer() {
                   <Link className="flink" to="/alerts-and-cases">
                     {"Alerts & case management"}
                   </Link>
-                  <Link className="flink" to="/transaction-monitoring">
+                  <Link className="flink" to="/regulatory-reporting">
                     Regulatory reporting (STR/SAR)
                   </Link>
                   <div style={{ fontSize: "13px", color: "rgba(232,237,235,0.5)", marginTop: "6px" }}>
