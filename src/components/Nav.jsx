@@ -35,7 +35,7 @@ export default function Nav() {
               <circle cx="12" cy="12" r="9" />
               <path d="m8.5 12 2.5 2.5 4.5-5" />
             </svg>
-            I'm getting verified
+            I&apos;m getting verified
           </a>
           <a className="util" href="#" style={{ display: "flex", alignItems: "center", gap: "4px" }}>
             <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
@@ -66,9 +66,9 @@ export default function Nav() {
             <a className="navitem" href="#">
               Resources
             </a>
-            <Link className="navitem" to="/about">
+            <button className="navitem" type="button" id="companyBtn" aria-controls="coMenu" aria-expanded={open === 'company'} onClick={() => toggle('company')} style={open === 'company' ? { color: '#0B5D45' } : undefined} {...hoverProps('company')}>
               Company
-            </Link>
+            </button>
             <Link className="navitem" to="/pricing">
               Pricing
             </Link>
@@ -270,6 +270,60 @@ export default function Nav() {
                 </div>
                 <a className="menulink" href="#" style={{ fontSize: "24px", lineHeight: "28.8px" }}>
                   Workforce verification
+                </a>
+              </div>
+            </div>
+          </div>
+          <div id="coMenu" hidden={open !== 'company'} {...hoverProps('company')}>
+            <div style={{ position: "absolute", top: "100%", left: "0", right: "0", background: "#FFFFFF", borderRadius: "16px", boxShadow: "0 30px 80px rgba(10,12,14,0.22)", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 240px), 1fr))", overflow: "hidden", zIndex: "40", fontWeight: "400" }}>
+              <div style={{ padding: "40px 44px", borderRight: "1px solid #ECEFEE" }}>
+                <div style={{ height: "260px", borderRadius: "4px", background: "#0B5D45", position: "relative", overflow: "hidden" }}>
+                  <img src="/site-assets/africa-dots.svg" alt="" style={{ position: "absolute", right: "-30px", top: "0", width: "280px", opacity: "0.35" }} />
+                </div>
+                <div style={{ textAlign: "center", marginTop: "30px", fontWeight: "500", fontSize: "28px", lineHeight: "33.6px" }}>
+                  Compliance, rebuilt for Africa
+                </div>
+                <div style={{ textAlign: "center", marginTop: "8px", fontSize: "14px", color: "#4D5560", lineHeight: "1.45" }}>
+                  The team and the standards behind Intact ID
+                </div>
+              </div>
+              <div style={{ padding: "40px 32px", display: "flex", flexDirection: "column", gap: "14.6px", fontSize: "16px", lineHeight: "22.4px" }}>
+                <div style={{ fontWeight: "500", fontSize: "28px", lineHeight: "33.6px", color: "#16181D", marginBottom: "10px" }}>
+                  Company
+                </div>
+                <Link className="menulink" to="/about">
+                  About us
+                </Link>
+                <Link className="menulink" to="/careers" style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}>
+                  Careers
+                  <span style={{ fontSize: "12px", lineHeight: "16px", fontWeight: "500", color: "#0B5D45", background: "#E3F5EC", borderRadius: "999px", padding: "2px 8px" }}>
+                    {"We're hiring"}
+                  </span>
+                </Link>
+                <Link className="menulink" to="/partners">
+                  Partners
+                </Link>
+              </div>
+              <div style={{ padding: "40px 32px", display: "flex", flexDirection: "column", gap: "14.6px", fontSize: "16px", lineHeight: "22.4px" }}>
+                <div style={{ fontWeight: "500", fontSize: "28px", lineHeight: "33.6px", color: "#16181D", marginBottom: "10px" }}>
+                  Trust
+                </div>
+                <Link className="menulink" to="/security">
+                  {"Security & data protection"}
+                </Link>
+                <Link className="menulink" to="/contact">
+                  Contact us
+                </Link>
+              </div>
+              <div style={{ padding: "40px 44px", display: "flex", flexDirection: "column", gap: "18px", borderLeft: "1px solid #ECEFEE" }}>
+                <div style={{ fontWeight: "500", fontSize: "28px", lineHeight: "33.6px", color: "#16181D", marginBottom: "4px" }}>
+                  Get in touch
+                </div>
+                <a className="menulink" href="mailto:contact@intact-io.com" style={{ fontSize: "20px", lineHeight: "26px" }}>
+                  contact@intact-io.com
+                </a>
+                <a className="menulink" href="mailto:partner@intact-io.com" style={{ fontSize: "20px", lineHeight: "26px" }}>
+                  partner@intact-io.com
                 </a>
               </div>
             </div>
