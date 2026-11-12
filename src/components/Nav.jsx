@@ -231,8 +231,8 @@ export default function Nav() {
                 <Link className="menulink" to="/customer-risk-assessment">
                   {"Individual & business risk scoring"}
                 </Link>
-                <Link className="menulink" to="/customer-risk-assessment">
-                  {"Sanctions & PEP risk overrides"}
+                <Link className="menulink" to="/aml-screening">
+                  {"Sanctions & PEP"}
                 </Link>
                 <Link className="menulink" to="/customer-risk-assessment">
                   {"Onboarding & ongoing reassessment"}
