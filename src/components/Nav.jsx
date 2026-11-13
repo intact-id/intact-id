@@ -51,8 +51,7 @@ export default function Nav() {
             </Link>
           </div>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", gap: "8px", flex: "1 1 0" }}>
-            {/* Log in: destination to be provided */}
-            <a className="navitem" href="#" style={{ padding: "10px 16px" }}>
+            <a className="navitem" href="https://portal.intact-io.com/" style={{ padding: "10px 16px" }}>
               Log in
             </a>
             <Link className="btn-primary" to="/apply" style={{ padding: "11px 20px", borderRadius: "10px" }}>
