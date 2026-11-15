@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="site-footer" style={{ background: "#0A0D0C", color: "#E8EDEB" }}>
       <div className="wrap" style={{ maxWidth: "1920px", margin: "0 auto", padding: "120px 56px 48px", boxSizing: "border-box" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 300px), 1fr))", gap: "48px 40px" }}>
-          <div style={{ gridColumn: "span 2" }}>
+          <div className="ft-span" style={{ gridColumn: "span 2" }}>
             <div>
               <h3 style={{ margin: "0", paddingBottom: "18px", borderBottom: "1px solid rgba(255,255,255,0.14)", fontSize: "22px", fontWeight: "500", color: "#FFFFFF" }}>
                 Products
@@ -93,7 +93,7 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          <div style={{ gridColumn: "span 2" }}>
+          <div className="ft-span" style={{ gridColumn: "span 2" }}>
             <div>
               <h3 style={{ margin: "0", paddingBottom: "18px", borderBottom: "1px solid rgba(255,255,255,0.14)", fontSize: "22px", fontWeight: "500", color: "#FFFFFF" }}>
                 Solutions

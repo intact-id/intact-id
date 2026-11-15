@@ -52,7 +52,7 @@
 .pg-kyc .mapbox{left:6% !important;width:88% !important;top:4% !important}
 .pg-kyc .cards{left:4% !important;right:4% !important;width:auto !important;top:auto !important;bottom:16px !important}
 .pg-kyc .promo{display:none !important}
-.pg-kyc .wrap{padding:0 20px !important}
+.pg-kyc .wrap{padding-left:20px !important;padding-right:20px !important}
 
 
 }
