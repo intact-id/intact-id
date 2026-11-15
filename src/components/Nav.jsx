@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from './Logo.jsx';
+import MobileMenu from './MobileMenu.jsx';
+import './nav.css';
 
 /** Site header: utility row, main nav, and the Products / Solutions menus. */
 export default function Nav() {
@@ -29,11 +31,11 @@ export default function Nav() {
     <>
     <header style={{ position: "sticky", top: "0", zIndex: "30", background: "#FFFFFF", borderBottom: "1px solid #E6EBE8" }}>
       <div className="wrap" style={{ maxWidth: "1920px", margin: "0 auto", padding: "0 56px", boxSizing: "border-box" }}>
-        <nav aria-label="Main" style={{ height: "88px", display: "flex", alignItems: "center", position: "relative", fontSize: "19px", fontWeight: "500", lineHeight: "26px" }}>
+        <nav aria-label="Main" className="mainnav" style={{ height: "88px", display: "flex", alignItems: "center", position: "relative", fontSize: "19px", fontWeight: "500", lineHeight: "26px" }}>
           <Link to="/" aria-label="Intact ID home" style={{ display: "flex", alignItems: "center", flex: "1 1 0" }}>
-            <Logo size={46} fontSize={27} />
+            <span className="nav-logo-lg"><Logo size={46} fontSize={27} /></span><span className="nav-logo-sm"><Logo size={34} fontSize={22} /></span>
           </Link>
-          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
+          <div className="nav-links" style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
             <button className="navitem" type="button" id="productsBtn" aria-controls="menu" aria-expanded={open === 'products'} onClick={() => toggle('products')} style={open === 'products' ? { color: '#0B5D45' } : undefined} {...hoverProps('products')}>
               Products
             </button>
@@ -51,14 +53,15 @@ export default function Nav() {
             </Link>
           </div>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", gap: "8px", flex: "1 1 0" }}>
-            <a className="navitem" href="https://portal.intact-io.com/" style={{ padding: "10px 16px" }}>
+            <a className="navitem nav-login" href="https://portal.intact-io.com/" style={{ padding: "10px 16px" }}>
               Log in
             </a>
-            <Link className="btn-primary" to="/apply" style={{ padding: "11px 20px", borderRadius: "10px" }}>
+            <Link className="btn-primary nav-cta" to="/apply" style={{ padding: "11px 20px", borderRadius: "10px" }}>
               Get started
             </Link>
+            <MobileMenu />
           </div>
-          <div id="menu" hidden={open !== 'products'} {...hoverProps('products')}>
+          <div id="menu" className="nav-mega" hidden={open !== 'products'} {...hoverProps('products')}>
             <div style={{ position: "absolute", top: "100%", left: "0", right: "0", background: "#FFFFFF", borderRadius: "16px", boxShadow: "0 30px 80px rgba(10,12,14,0.22)", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 240px), 1fr))", overflow: "hidden", zIndex: "40", fontWeight: "400" }}>
               <div style={{ padding: "40px 44px", borderRight: "1px solid #ECEFEE" }}>
                 <div style={{ height: "260px", borderRadius: "4px", background: "#0B5D45", position: "relative", overflow: "hidden" }}>
@@ -168,7 +171,7 @@ export default function Nav() {
               </div>
             </div>
           </div>
-          <div id="solMenu" hidden={open !== 'solutions'} {...hoverProps('solutions')}>
+          <div id="solMenu" className="nav-mega" hidden={open !== 'solutions'} {...hoverProps('solutions')}>
             <div style={{ position: "absolute", top: "100%", left: "0", right: "0", background: "#FFFFFF", borderRadius: "16px", boxShadow: "0 30px 80px rgba(10,12,14,0.22)", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 240px), 1fr))", overflow: "hidden", zIndex: "40", fontWeight: "400" }}>
               <div style={{ padding: "40px 44px", borderRight: "1px solid #ECEFEE" }}>
                 <div style={{ height: "260px", borderRadius: "4px", background: "#0B5D45", position: "relative", overflow: "hidden" }}>
@@ -263,7 +266,7 @@ export default function Nav() {
               </div>
             </div>
           </div>
-          <div id="coMenu" hidden={open !== 'company'} {...hoverProps('company')}>
+          <div id="coMenu" className="nav-mega" hidden={open !== 'company'} {...hoverProps('company')}>
             <div style={{ position: "absolute", top: "100%", left: "0", right: "0", background: "#FFFFFF", borderRadius: "16px", boxShadow: "0 30px 80px rgba(10,12,14,0.22)", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 240px), 1fr))", overflow: "hidden", zIndex: "40", fontWeight: "400" }}>
               <div style={{ padding: "40px 44px", borderRight: "1px solid #ECEFEE" }}>
                 <div style={{ height: "260px", borderRadius: "4px", background: "#0B5D45", position: "relative", overflow: "hidden" }}>

@@ -1,0 +1,25 @@
+/* Phone-size fixes shared by every page. */
+@media (max-width: 720px){
+  /* Pages are drawn at 80% on desktop; on phones they use full size so text stays readable. */
+  [style*="zoom: 0.8"]{zoom:1 !important}
+
+  /* Home page: oversized type */
+  .pg-home h2[style*="font-size: 74px"]{font-size:44px !important}
+  .pg-home [style*="font-size: 150px"]{font-size:58px !important}
+  .pg-home svg[width="230"]{width:92px;height:92px}
+  .pg-home [style*="clamp(88px"]{font-size:64px !important}
+
+  /* Section spacing: a little tighter than desktop */
+  .wrap[style*="padding: 112px 56px"]{padding-top:72px !important}
+  .wrap[style*="padding: 112px 56px 112px"]{padding-bottom:72px !important}
+  .wrap[style*="padding: 150px 56px"]{padding-top:88px !important}
+  .wrap[style*="padding: 150px 56px;"]{padding-bottom:88px !important}
+
+  /* "Covers / Watches" lists under heroes */
+  [class*="pg-"] .rails{margin-top:32px !important;gap:8px 18px !important;font-size:16px !important}
+  [class*="pg-"] .rails__label{flex-basis:100% !important;border-right:0 !important;padding-right:0 !important}
+
+  /* Dark "how we handle data" rows: title above text instead of side by side */
+  [class*="pg-"] .case{flex-wrap:wrap}
+  [class*="pg-"] .case b{min-width:0 !important;flex:1 1 100%}
+}

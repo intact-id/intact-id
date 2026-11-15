@@ -1,0 +1,37 @@
+/* Header on small screens: menu button instead of the inline links and mega menus. */
+.nav-logo-sm{display:none}
+.mnav-btn{display:none;align-items:center;justify-content:center;width:44px;height:44px;margin-left:4px;border:0;border-radius:10px;background:#F2F6F4;color:#0A0C0E;cursor:pointer}
+.mnav-btn:focus-visible{outline:2px solid #1DB980;outline-offset:2px}
+.mnav{position:fixed;left:0;right:0;bottom:0;top:var(--mnav-top,64px);z-index:50;background:#FFFFFF;overflow-y:auto;-webkit-overflow-scrolling:touch;border-top:1px solid #E6EBE8;font-family:Geist,system-ui,sans-serif}
+.mnav[hidden]{display:none}
+.mnav nav{padding:8px 20px 40px;display:flex;flex-direction:column}
+.mnav-g{border-bottom:1px solid #ECEFEE}
+.mnav-h{display:flex;width:100%;align-items:center;justify-content:space-between;padding:18px 0;border:0;background:none;font:inherit;font-size:20px;font-weight:500;color:#0A0C0E;text-align:left;cursor:pointer;text-decoration:none}
+.mnav-h svg{transition:transform .2s}
+.mnav-h[aria-expanded="true"] svg{transform:rotate(180deg)}
+.mnav-plain{border-bottom:1px solid #ECEFEE}
+.mnav-body{padding:0 0 14px}
+.mnav-s{padding:4px 0 10px}
+.mnav-s p{margin:6px 0 4px;font-size:13px;color:#5B6461}
+.mnav-s a{display:block;padding:10px 0;font-size:17px;color:#16181D;text-decoration:none}
+.mnav-s a:active{color:#0B5D45}
+.mnav-cta{display:flex;flex-direction:column;gap:10px;margin-top:24px}
+.mnav-primary,.mnav-secondary{display:flex;align-items:center;justify-content:center;height:52px;border-radius:10px;font-size:17px;font-weight:500;text-decoration:none}
+.mnav-primary{background:#0B5D45;color:#FFFFFF}
+.mnav-secondary{border:1px solid #C9D3CE;color:#0A0C0E}
+.mnav-mail{margin:24px 0 0;font-size:15px;color:#5B6461}
+.mnav-mail a{color:#0B5D45}
+.mnav a:focus-visible,.mnav button:focus-visible{outline:2px solid #1DB980;outline-offset:2px}
+
+@media (max-width: 1100px){
+  .nav-links,.nav-login,.nav-mega{display:none !important}
+  .mnav-btn{display:inline-flex}
+  #overlayBtn{display:none}
+}
+@media (max-width: 720px){
+  .mainnav{height:64px !important}
+  .nav-logo-lg{display:none}
+  .nav-logo-sm{display:inline-flex}
+  .nav-cta{padding:9px 14px !important;font-size:15px}
+  header .wrap{padding:0 16px !important}
+}
